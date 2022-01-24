@@ -55,6 +55,18 @@
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     // https://eslint.org/docs/rules/guard-for-in
     "guard-for-in": "error",
+    // https://eslint.org/docs/rules/multiline-comment-style
+    "multiline-comment-style": ["error", "separate-lines"],
+    // https://eslint.org/docs/rules/no-confusing-arrow
+    "no-confusing-arrow": "error",
+    // https://eslint.org/docs/rules/no-array-constructor
+    "no-array-constructor": "error",
+    // https://eslint.org/docs/rules/no-bitwise
+    "no-bitwise": "warn",
+    // https://eslint.org/docs/rules/no-caller
+    "no-caller": "error",
+    // https://eslint.org/docs/rules/no-continue
+    "no-continue": "error",
     "import/order": [
       "warn",
       {
