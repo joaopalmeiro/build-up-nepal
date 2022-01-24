@@ -21,6 +21,7 @@
     "sourceType": "module"
   },
   // https://eslint.org/docs/rules/
+  // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
   "rules": {
     "eqeqeq": "error",
     "no-else-return": "error",
@@ -33,6 +34,27 @@
     "no-template-curly-in-string": "error",
     // https://eslint.org/docs/rules/no-use-before-define
     "no-use-before-define": ["error", { "functions": true, "classes": true, "variables": true }],
+    // https://eslint.org/docs/rules/block-scoped-var
+    "block-scoped-var": "error",
+    // https://eslint.org/docs/rules/camelcase
+    "camelcase": "error",
+    // https://eslint.org/docs/rules/consistent-return
+    "consistent-return": "error",
+    // https://eslint.org/docs/rules/curly
+    "curly": ["error", "all"],
+    // https://eslint.org/docs/rules/default-case
+    // Comment pattern: `// no default`
+    "default-case": "error",
+    // https://eslint.org/docs/rules/default-case-last
+    "default-case-last": "error",
+    // https://eslint.org/docs/rules/default-param-last
+    "default-param-last": "error",
+    // https://eslint.org/docs/rules/dot-notation
+    "dot-notation": "error",
+    // https://eslint.org/docs/rules/func-style
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    // https://eslint.org/docs/rules/guard-for-in
+    "guard-for-in": "error",
     "import/order": [
       "warn",
       {
