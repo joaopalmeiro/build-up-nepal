@@ -2,6 +2,12 @@
 
 > [Project](https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal)
 
+## Development
+
+- Install [pnpm](https://pnpm.io/installation) (if necessary).
+- `pnpm install`.
+- `pnpm dev`.
+
 ## References
 
 - [Nepal](https://en.wikipedia.org/wiki/Nepal) Wikipedia page.
@@ -14,3 +20,5 @@
   - [Documentation](https://github.com/mbloch/mapshaper/wiki/Command-Reference).
   - [npm package](https://www.npmjs.com/package/mapshaper).
 - [GADM data](https://gadm.org/download_country.html).
+- [vite-react-stitches-radix](https://github.com/xixixao/vite-react-stitches-radix) template.
+- `pnpm create vite -- --template react`.
