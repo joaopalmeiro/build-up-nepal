@@ -22,5 +22,5 @@
 - [GADM data](https://gadm.org/download_country.html).
 - [vite-react-stitches-radix](https://github.com/xixixao/vite-react-stitches-radix) template.
 - `pnpm create vite -- --template react`.
-- `pnpm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import`.
+- `pnpm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import @joaopalmeiro/prettier-config`.
 - `pnpm eslint --init`.
