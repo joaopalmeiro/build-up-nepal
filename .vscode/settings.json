@@ -8,5 +8,7 @@
   },
   "[javascriptreact]": {
     "editor.formatOnSave": false
-  }
+  },
+  "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩",
+  "workbench.iconTheme": "material-icon-theme"
 }
