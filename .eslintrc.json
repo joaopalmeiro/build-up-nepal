@@ -67,6 +67,8 @@
     "no-caller": "error",
     // https://eslint.org/docs/rules/no-continue
     "no-continue": "error",
+    // https://eslint.org/docs/rules/no-div-regex
+    "no-div-regex": "error",
     "import/order": [
       "warn",
       {
