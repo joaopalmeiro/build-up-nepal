@@ -24,6 +24,14 @@
     "eqeqeq": "error",
     "no-else-return": "error",
     "no-console": "warn",
+    // https://eslint.org/docs/rules/array-callback-return
+    "array-callback-return": ["error", { "checkForEach": true }],
+    // https://eslint.org/docs/rules/no-self-compare
+    "no-self-compare": "error",
+    // https://eslint.org/docs/rules/no-template-curly-in-string
+    "no-template-curly-in-string": "error",
+    // https://eslint.org/docs/rules/no-use-before-define
+    "no-use-before-define": ["error", { "functions": true, "classes": true, "variables": true }],
     "import/order": [
       "warn",
       {
