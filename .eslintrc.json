@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    // Alternative: https://eslint.org/docs/rules/sort-imports
     "plugin:import/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -150,6 +151,57 @@
     "no-useless-concat": "error",
     // https://eslint.org/docs/rules/no-useless-rename
     "no-useless-rename": "error",
+    // https://eslint.org/docs/rules/no-useless-return
+    "no-useless-return": "error",
+    // https://eslint.org/docs/rules/no-var
+    "no-var": "error",
+    // https://eslint.org/docs/rules/no-void
+    "no-void": "error",
+    // https://eslint.org/docs/rules/no-warning-comments
+    "no-warning-comments": "warn",
+    // https://eslint.org/docs/rules/object-shorthand
+    "object-shorthand": ["error", "always"],
+    // https://eslint.org/docs/rules/operator-assignment
+    "operator-assignment": ["error", "always"],
+    // https://eslint.org/docs/rules/prefer-const
+    "prefer-const": "error",
+    // https://eslint.org/docs/rules/prefer-destructuring
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": true,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": true
+      }
+    ],
+    // https://eslint.org/docs/rules/prefer-exponentiation-operator
+    "prefer-exponentiation-operator": "error",
+    // https://eslint.org/docs/rules/prefer-named-capture-group
+    "prefer-named-capture-group": "error",
+    // https://eslint.org/docs/rules/prefer-object-spread
+    "prefer-object-spread": "error",
+    // https://eslint.org/docs/rules/prefer-promise-reject-errors
+    "prefer-promise-reject-errors": "error",
+    // https://eslint.org/docs/rules/prefer-rest-params
+    "prefer-rest-params": "error",
+    // https://eslint.org/docs/rules/prefer-spread
+    "prefer-spread": "error",
+    // https://eslint.org/docs/rules/radix
+    "radix": ["error", "as-needed"],
+    // https://eslint.org/docs/rules/require-await
+    "require-await": "error",
+    // https://eslint.org/docs/rules/sort-keys
+    "sort-keys": ["error", "asc", { "caseSensitive": false, "natural": true, "minKeys": 2 }],
+    // https://eslint.org/docs/rules/sort-vars
+    "sort-vars": "error",
+    // https://eslint.org/docs/rules/spaced-comment
+    "spaced-comment": ["error", "always"],
+    // https://eslint.org/docs/rules/symbol-description
+    "symbol-description": "error",
+    // https://eslint.org/docs/rules/yoda
+    "yoda": ["error", "always"],
     "import/order": [
       "warn",
       {
