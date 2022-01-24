@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Jupyter Notebook
+# https://github.com/github/gitignore/blob/main/Python.gitignore
+.ipynb_checkpoints
+
+# Custom
+data/formatter.py
