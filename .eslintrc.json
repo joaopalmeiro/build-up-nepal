@@ -23,6 +23,8 @@
   // https://eslint.org/docs/rules/
   // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
   "rules": {
+    // https://eslint.org/docs/rules/eqeqeq
+    // https://eslint.org/docs/rules/no-eq-null
     "eqeqeq": "error",
     "no-else-return": "error",
     "no-console": "warn",
@@ -69,6 +71,83 @@
     "no-continue": "error",
     // https://eslint.org/docs/rules/no-div-regex
     "no-div-regex": "error",
+    // https://eslint.org/docs/rules/no-empty-function
+    "no-empty-function": "error",
+    // https://eslint.org/docs/rules/no-eval
+    "no-eval": "error",
+    // https://eslint.org/docs/rules/no-extend-native
+    "no-extend-native": "warn",
+    // https://eslint.org/docs/rules/no-extra-bind
+    "no-extra-bind": "error",
+    // https://eslint.org/docs/rules/no-floating-decimal
+    "no-floating-decimal": "error",
+    // https://eslint.org/docs/rules/no-implicit-coercion
+    "no-implicit-coercion": "error",
+    // https://eslint.org/docs/rules/no-extra-label
+    // https://eslint.org/docs/rules/no-labels
+    "no-extra-label": "error",
+    // https://eslint.org/docs/rules/no-unused-labels
+    "no-unused-labels": "error",
+    // https://eslint.org/docs/rules/no-label-var
+    "no-label-var": "error",
+    // https://eslint.org/docs/rules/no-implied-eval
+    "no-implied-eval": "error",
+    // https://eslint.org/docs/rules/no-invalid-this
+    "no-invalid-this": "error",
+    // https://eslint.org/docs/rules/no-iterator
+    "no-iterator": "error",
+    // https://eslint.org/docs/rules/no-lone-blocks
+    "no-lone-blocks": "error",
+    // https://eslint.org/docs/rules/no-lonely-if
+    "no-lonely-if": "error",
+    // https://eslint.org/docs/rules/no-loop-func
+    "no-loop-func": "error",
+    // https://eslint.org/docs/rules/no-mixed-operators
+    "no-mixed-operators": "error",
+    // https://eslint.org/docs/rules/no-multi-str
+    "no-multi-str": "error",
+    // https://eslint.org/docs/rules/no-negated-condition
+    "no-negated-condition": "error",
+    // https://eslint.org/docs/rules/no-new
+    "no-new": "error",
+    // https://eslint.org/docs/rules/no-new-func
+    "no-new-func": "error",
+    // https://eslint.org/docs/rules/no-new-object
+    "no-new-object": "error",
+    // https://eslint.org/docs/rules/no-new-wrappers
+    "no-new-wrappers": "error",
+    // https://eslint.org/docs/rules/no-octal-escape
+    "no-octal-escape": "error",
+    // https://eslint.org/docs/rules/no-param-reassign
+    "no-param-reassign": "warn",
+    // https://eslint.org/docs/rules/no-plusplus
+    "no-plusplus": "error",
+    // https://eslint.org/docs/rules/no-proto
+    "no-proto": "error",
+    // https://eslint.org/docs/rules/no-return-assign
+    "no-return-assign": "error",
+    // https://eslint.org/docs/rules/no-return-await
+    "no-return-await": "error",
+    // https://eslint.org/docs/rules/no-sequences
+    "no-sequences": "error",
+    // https://eslint.org/docs/rules/no-shadow
+    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all" }],
+    // https://eslint.org/docs/rules/no-throw-literal
+    "no-throw-literal": "error",
+    // https://eslint.org/docs/rules/no-undef-init
+    "no-undef-init": "error",
+    // https://eslint.org/docs/rules/no-undefined
+    "no-undefined": "error",
+    // https://eslint.org/docs/rules/no-unneeded-ternary
+    "no-unneeded-ternary": "error",
+    // https://eslint.org/docs/rules/no-unused-expressions
+    "no-unused-expressions": "warn",
+    // https://eslint.org/docs/rules/no-useless-call
+    "no-useless-call": "error",
+    // https://eslint.org/docs/rules/no-useless-computed-key
+    "no-useless-computed-key": "error",
+    // https://eslint.org/docs/rules/no-useless-concat
+    "no-useless-concat": "error",
     "import/order": [
       "warn",
       {
