@@ -148,6 +148,8 @@
     "no-useless-computed-key": "error",
     // https://eslint.org/docs/rules/no-useless-concat
     "no-useless-concat": "error",
+    // https://eslint.org/docs/rules/no-useless-rename
+    "no-useless-rename": "error",
     "import/order": [
       "warn",
       {
