@@ -31,3 +31,4 @@
 - [Open Data Nepal](https://opendatanepal.com/) website.
 - [topojson](https://github.com/mattijn/topojson) Python package.
 - [shapefile](https://github.com/mbostock/shapefile).
+- `pnpm install @modulz/design-system @stitches/react`.

@@ -1,7 +1,12 @@
+import Container from './Container';
 import NepalMap from './NepalMap';
 
 function App() {
-    return <NepalMap />;
+    return (
+        <Container size={2}>
+            <NepalMap />
+        </Container>
+    );
 }
 
 export default App;
