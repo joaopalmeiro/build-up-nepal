@@ -1,5 +1,7 @@
+import NepalMap from './NepalMap';
+
 function App() {
-    return <div>Hello, World!</div>;
+    return <NepalMap />;
 }
 
 export default App;

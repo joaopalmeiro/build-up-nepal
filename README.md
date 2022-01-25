@@ -24,3 +24,6 @@
 - `pnpm create vite -- --template react`.
 - `pnpm install -D eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import @joaopalmeiro/prettier-config`.
 - `pnpm eslint --init`.
+- `pnpm install prop-types react-simple-maps`.
+- [prop-types](https://www.npmjs.com/package/prop-types) package.
+- [nepal-geojson](https://github.com/Acesmndr/nepal-geojson) package.
