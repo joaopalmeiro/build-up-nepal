@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@joaopalmeiro/prettier-config': ^0.1.1
   '@vitejs/plugin-react': ^1.0.7
+  d3-geo: ^3.0.1
   eslint: ^8.7.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-import: ^2.25.4
@@ -18,6 +19,7 @@ specifiers:
   vite: ^2.7.2
 
 dependencies:
+  d3-geo: 3.0.1
   prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -610,6 +612,13 @@ packages:
 
   /d3-geo/2.0.2:
     resolution: {integrity: sha512-8pM1WGMLGFuhq9S+FpPURxic+gKzjluCD/CHTuUF3mXMeiCo0i6R0tO1s4+GArRFde96SLcW/kOFRjoAosPsFA==}
+    dependencies:
+      d3-array: 2.12.1
+    dev: false
+
+  /d3-geo/3.0.1:
+    resolution: {integrity: sha512-Wt23xBych5tSy9IYAM1FR2rWIBFWa52B/oF/GYe5zbdHrg08FU8+BuI6X4PvTwPDdqdAdq04fuWJpELtsaEjeA==}
+    engines: {node: '>=12'}
     dependencies:
       d3-array: 2.12.1
     dev: false

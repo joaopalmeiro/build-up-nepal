@@ -13,6 +13,7 @@
 - [Nepal](https://en.wikipedia.org/wiki/Nepal) Wikipedia page.
 - [Nepal - Subnational Administrative Boundaries](https://data.humdata.org/dataset/administrative-bounadries-of-nepal) dataset ([HDX](https://data.humdata.org/)).
 - [Mapshaper](https://github.com/mbloch/mapshaper).
+- [@modulz/design-system](https://www.npmjs.com/package/@modulz/design-system).
 
 ## Notes
 
@@ -27,3 +28,6 @@
 - `pnpm install prop-types react-simple-maps`.
 - [prop-types](https://www.npmjs.com/package/prop-types) package.
 - [nepal-geojson](https://github.com/Acesmndr/nepal-geojson) package.
+- [Open Data Nepal](https://opendatanepal.com/) website.
+- [topojson](https://github.com/mattijn/topojson) Python package.
+- [shapefile](https://github.com/mbostock/shapefile).
