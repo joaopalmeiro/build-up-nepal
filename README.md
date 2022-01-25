@@ -31,4 +31,11 @@
 - [Open Data Nepal](https://opendatanepal.com/) website.
 - [topojson](https://github.com/mattijn/topojson) Python package.
 - [shapefile](https://github.com/mbostock/shapefile).
-- `pnpm install @modulz/design-system @stitches/react`.
+- [Stitches](https://stitches.dev/):
+  - `pnpm install @modulz/design-system @stitches/react`.
+  - CSS-in-JS.
+  - It supports SSR.
+  - Utils: custom CSS properties.
+  - The `as` prop can be used to define the HTML tag.
+  - [API documentation](https://stitches.dev/docs/api). [Styling documentation](https://stitches.dev/docs/styling).
+  - The `@stitches/core` package can be used in [Svelte](https://stitches.dev/docs/frequently-asked-questions#is-stitches-limited-to-react).
