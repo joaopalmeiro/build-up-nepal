@@ -9,6 +9,7 @@ jupyterlab = "*"
 black = {version = "==21.12b0", extras = ["jupyter"]}
 dtale = "*"
 geopandas = "*"
+inflection = "*"
 
 [dev-packages]
 

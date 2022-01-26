@@ -1,6 +1,7 @@
 import { geoEqualEarth, geoPath } from 'd3-geo';
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 
+import data from './data.json';
 import mapData from './map.json';
 
 const defaultWidth = 800; // px
@@ -34,7 +35,11 @@ function NepalMap() {
     const mapHeight = y1;
     // const mapHeight = 600;
 
+    // TODO
+    const markers = [data[0], data[1], data[30]];
+
     return (
+        // https://www.buildupnepal.com/project-map/
         // https://www.react-simple-maps.io/docs/composable-map/
         // https://www.react-simple-maps.io/examples/basic-markers/
         // https://github.com/zcreativelabs/react-simple-maps/blob/v2.2.0/src/components/MapProvider.js#L27
@@ -44,6 +49,14 @@ function NepalMap() {
                     geographies.map((geo) => <Geography key={geo.rsmKey} geography={geo} />)
                 }
             </Geographies>
+            {/* https://www.react-simple-maps.io/docs/marker/ */}
+            {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
+            {markers.map(({ longitude, latitude }) => (
+                // Coordinates: [lon, lat]
+                <Marker key={`${longitude}-${latitude}`} coordinates={[longitude, latitude]}>
+                    <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
+                </Marker>
+            ))}
         </ComposableMap>
     );
 }
