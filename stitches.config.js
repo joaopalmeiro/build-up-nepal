@@ -7,6 +7,7 @@ import { createStitches } from '@stitches/react';
 // https://stitches.dev/docs/api#media
 // https://stitches.dev/docs/tokens#property-mapping
 // https://stitches.dev/docs/utils
+// https://github.com/radix-ui/design-system/blob/v0.6.2/styles.css
 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } =
     createStitches({
         theme: {
@@ -20,6 +21,13 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 7: '45px',
                 8: '65px',
                 9: '80px'
+            },
+            zIndices: {
+                1: '100',
+                2: '200',
+                3: '300',
+                4: '400',
+                max: '999'
             }
         },
 
