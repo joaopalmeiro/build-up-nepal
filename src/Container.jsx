@@ -9,7 +9,9 @@ const Container = styled('div', {
     flexShrink: 0,
 
     // Custom
-    // TODO https://github.com/radix-ui/design-system/blob/v0.6.2/components/Container.tsx
+    ml: 'auto',
+    mr: 'auto',
+    px: '$5',
 
     variants: {
         size: {

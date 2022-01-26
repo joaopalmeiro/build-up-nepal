@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@joaopalmeiro/prettier-config': ^0.1.1
   '@modulz/design-system': ^0.6.2
+  '@radix-ui/colors': ^0.1.8
   '@stitches/react': ^1.2.6
   '@vitejs/plugin-react': ^1.0.7
   d3-geo: ^3.0.1
@@ -22,6 +23,7 @@ specifiers:
 
 dependencies:
   '@modulz/design-system': 0.6.2_react-dom@17.0.2+react@17.0.2
+  '@radix-ui/colors': 0.1.8
   '@stitches/react': 1.2.6_react@17.0.2
   d3-geo: 3.0.1
   prop-types: 15.8.1
@@ -398,6 +400,10 @@ packages:
 
   /@radix-ui/colors/0.1.7:
     resolution: {integrity: sha512-E6+ZPQ+FFn1/NZ4c/KRvZTu9KjC/MXrbJNETYs1HKe96gyxQivPu65FkhOsRnPigvJ0YJ9ZxYGxayqDNmaC1cQ==}
+    dev: false
+
+  /@radix-ui/colors/0.1.8:
+    resolution: {integrity: sha512-jwRMXYwC0hUo0mv6wGpuw254Pd9p/R6Td5xsRpOmaWkUHlooNWqVcadgyzlRumMq3xfOTXwJReU0Jv+EIy4Jbw==}
     dev: false
 
   /@radix-ui/number/0.1.0:

@@ -32,7 +32,7 @@
 - [topojson](https://github.com/mattijn/topojson) Python package.
 - [shapefile](https://github.com/mbostock/shapefile).
 - [Stitches](https://stitches.dev/):
-  - `pnpm install @modulz/design-system @stitches/react`.
+  - `pnpm install @modulz/design-system @stitches/react @radix-ui/colors`.
   - CSS-in-JS.
   - It supports [SSR](https://stitches.dev/docs/server-side-rendering).
   - Utils: custom CSS properties.
