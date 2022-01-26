@@ -34,8 +34,9 @@
 - [Stitches](https://stitches.dev/):
   - `pnpm install @modulz/design-system @stitches/react`.
   - CSS-in-JS.
-  - It supports SSR.
+  - It supports [SSR](https://stitches.dev/docs/server-side-rendering).
   - Utils: custom CSS properties.
   - The `as` prop can be used to define the HTML tag.
   - [API documentation](https://stitches.dev/docs/api). [Styling documentation](https://stitches.dev/docs/styling).
-  - The `@stitches/core` package can be used in [Svelte](https://stitches.dev/docs/frequently-asked-questions#is-stitches-limited-to-react).
+  - The `@stitches/core` package can be used in [Svelte](https://stitches.dev/docs/frequently-asked-questions#is-stitches-limited-to-react). The main difference is that the API returns class names instead of React components.
+  - `css` prop as an alternative to the `style` attribute.

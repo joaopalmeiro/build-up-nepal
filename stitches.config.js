@@ -5,5 +5,7 @@ import { createStitches } from '@stitches/react';
 // https://github.com/radix-ui/design-system/blob/v0.6.2/stitches.config.ts
 // https://stitches.dev/docs/api#theme
 // https://stitches.dev/docs/api#media
+// https://stitches.dev/docs/tokens#property-mapping
+// https://stitches.dev/docs/utils
 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } =
     createStitches({});
