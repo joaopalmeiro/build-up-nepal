@@ -31,8 +31,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 2: '6px',
                 3: '8px',
                 4: '12px',
-                pill: '9999px',
-                round: '50%'
+                round: '50%',
+                // eslint-disable-next-line sort-keys
+                pill: '9999px'
             },
             sizes: {
                 1: '5px',
@@ -76,6 +77,12 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             px: (value) => ({
                 paddingLeft: value,
                 paddingRight: value
+            }),
+
+            userSelect: (value) => ({
+                WebkitUserSelect: value,
+                // eslint-disable-next-line sort-keys
+                userSelect: value
             })
         }
     });
