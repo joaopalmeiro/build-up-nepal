@@ -40,3 +40,6 @@
   - [API documentation](https://stitches.dev/docs/api). [Styling documentation](https://stitches.dev/docs/styling).
   - The `@stitches/core` package can be used in [Svelte](https://stitches.dev/docs/frequently-asked-questions#is-stitches-limited-to-react). The main difference is that the API returns class names instead of React components.
   - `css` prop as an alternative to the `style` attribute.
+- [Radix Colors](https://www.radix-ui.com/colors):
+  - They are JavaScript objects.
+  - [Colors](https://www.radix-ui.com/docs/colors/palette-composition/the-scales), [combinations](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette), and [use cases](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale).
