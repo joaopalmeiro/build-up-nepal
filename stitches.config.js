@@ -10,6 +10,11 @@ import { createStitches } from '@stitches/react';
 // https://github.com/radix-ui/design-system/blob/v0.6.2/styles.css
 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } =
     createStitches({
+        media: {
+            // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover
+            hover: '(any-hover: hover)'
+        },
+
         theme: {
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18
