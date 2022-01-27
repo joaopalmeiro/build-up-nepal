@@ -2,10 +2,10 @@
 import { styled } from '../stitches.config';
 
 // Source: https://github.com/radix-ui/design-system/blob/v0.6.2/components/Container.tsx
+// https://cssreference.io/property/flex-shrink/
 const Container = styled('div', {
     // Reset
     boxSizing: 'border-box',
-    // https://cssreference.io/property/flex-shrink/
     flexShrink: 0,
 
     // Custom
@@ -29,6 +29,7 @@ const Container = styled('div', {
             }
         }
     },
+
     defaultVariants: {
         size: '4'
     }

@@ -1,5 +1,6 @@
 import { styled } from '../stitches.config';
 
+import Button from './Button';
 import Container from './Container';
 import NepalMap from './NepalMap';
 
@@ -24,6 +25,7 @@ function App() {
         <>
             <Container size={2}>
                 <NepalMap />
+                <Button size={3}>Add</Button>
             </Container>
             <Background>
                 <filter id="noise">

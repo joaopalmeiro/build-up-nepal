@@ -1,5 +1,8 @@
 // import { theme as modulzTheme } from '@modulz/design-system';
+import { mauve, mauveA } from '@radix-ui/colors';
 import { createStitches } from '@stitches/react';
+
+// console.log(mauve);
 
 // https://stitches.dev/docs/installation#configure-stitches
 // https://github.com/radix-ui/design-system/blob/v0.6.2/stitches.config.ts
@@ -16,6 +19,13 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         },
 
         theme: {
+            colors: {
+                ...mauve,
+                ...mauveA,
+
+                hiContrast: '$mauve12',
+                loContrast: 'white'
+            },
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18
                 sans: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji'
