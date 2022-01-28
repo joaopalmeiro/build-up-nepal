@@ -62,7 +62,7 @@ function App() {
     const setMarkers = useUpdateAtom(markersAtom);
     const availableData = useAtomValue(availableDataAtom);
 
-    // console.log(availableData, isEmpty(availableData));
+    // console.log(availableData, availableData.length, isEmpty(availableData));
 
     const addMarker = () =>
         setMarkers((d) => {
