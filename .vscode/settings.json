@@ -10,5 +10,9 @@
     "editor.formatOnSave": false
   },
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+
+  // https://github.com/microsoft/vscode-eslint#settings-options
+  // "eslint.quiet": false
+  "eslint.quiet": true
 }

@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys */
 import { styled } from '../stitches.config';
 
 // Source: https://github.com/radix-ui/design-system/blob/v0.6.2/components/Flex.tsx

@@ -132,7 +132,8 @@
     // https://eslint.org/docs/rules/no-sequences
     "no-sequences": "error",
     // https://eslint.org/docs/rules/no-shadow
-    "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all" }],
+    // "no-shadow": ["error", { "builtinGlobals": true, "hoist": "all" }],
+    "no-shadow": ["warn", { "builtinGlobals": true, "hoist": "all" }],
     // https://eslint.org/docs/rules/no-throw-literal
     "no-throw-literal": "error",
     // https://eslint.org/docs/rules/no-undef-init
@@ -158,7 +159,7 @@
     // https://eslint.org/docs/rules/no-void
     "no-void": "error",
     // https://eslint.org/docs/rules/no-warning-comments
-    "no-warning-comments": "warn",
+    "no-warning-comments": "error",
     // https://eslint.org/docs/rules/object-shorthand
     "object-shorthand": ["error", "always"],
     // https://eslint.org/docs/rules/operator-assignment
@@ -193,7 +194,7 @@
     // https://eslint.org/docs/rules/require-await
     "require-await": "error",
     // https://eslint.org/docs/rules/sort-keys
-    "sort-keys": ["error", "asc", { "caseSensitive": false, "natural": true, "minKeys": 2 }],
+    "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true, "minKeys": 2 }],
     // https://eslint.org/docs/rules/sort-vars
     "sort-vars": "error",
     // https://eslint.org/docs/rules/spaced-comment
