@@ -1,7 +1,12 @@
+import { useUpdateAtom } from 'jotai/utils';
+import random from 'just-random';
+
 import { globalCss, styled } from '../stitches.config';
 
+import { dataAtom } from './atoms';
 import Button from './Button';
 import Container from './Container';
+import data from './data.json';
 import Flex from './Flex';
 import Grid from './Grid';
 import NepalMap from './NepalMap';
@@ -52,12 +57,19 @@ const Background = styled('svg', {
 function App() {
     globalStyles();
 
+    // https://jotai.org/docs/utils/use-update-atom
+    const setData = useUpdateAtom(dataAtom);
+    const addMarker = () => setData((d) => [random(data), ...d]);
+
     return (
         <>
+            {/* Rendered: {++useRef(0).current} */}
             <Container size={2}>
                 <Flex direction="column" gap={1} align="center">
                     <NepalMap />
-                    <Button size={3}>Add</Button>
+                    <Button size={3} onClick={addMarker}>
+                        Add
+                    </Button>
                 </Flex>
                 <Grid columns={2} gapX={1} gapY={2}>
                     {/* https://cssreference.io/property/grid-auto-flow/ */}

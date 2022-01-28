@@ -1,7 +1,8 @@
 import { geoEqualEarth, geoPath } from 'd3-geo';
+import { useAtom } from 'jotai';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 
-import data from './data.json';
+import { dataAtom } from './atoms';
 import mapData from './map.json';
 import { getGoogleMapsUrl } from './utils';
 
@@ -9,6 +10,9 @@ const defaultWidth = 800; // px
 
 // https://www.react-simple-maps.io/docs/getting-started/
 function NepalMap() {
+    const [data] = useAtom(dataAtom);
+    // console.log(data);
+
     // https://stackoverflow.com/a/40940028
     // https://www.react-simple-maps.io/docs/composable-map/
     // https://github.com/d3/d3-geo#projection_fitExtent
@@ -36,9 +40,6 @@ function NepalMap() {
     const mapHeight = y1;
     // const mapHeight = 600;
 
-    // TODO
-    const markers = [data[0], data[1], data[30]];
-
     return (
         // https://www.buildupnepal.com/project-map/
         // https://www.react-simple-maps.io/docs/composable-map/
@@ -52,9 +53,12 @@ function NepalMap() {
             </Geographies>
             {/* https://www.react-simple-maps.io/docs/marker/ */}
             {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
-            {markers.map(({ longitude, latitude }) => (
+            {data.map(({ name, longitude, latitude }) => (
                 // Coordinates: [lon, lat]
-                <Marker key={`${longitude}-${latitude}`} coordinates={[longitude, latitude]}>
+                <Marker
+                    key={`${name}-${longitude}-${latitude}`}
+                    coordinates={[longitude, latitude]}
+                >
                     <a
                         href={getGoogleMapsUrl(longitude, latitude)}
                         target="_blank"
