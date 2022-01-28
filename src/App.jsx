@@ -1,5 +1,7 @@
 import { useUpdateAtom } from 'jotai/utils';
-import random from 'just-random';
+import isEmpty from 'lodash.isempty';
+import pullAt from 'lodash.pullat';
+import random from 'lodash.random';
 
 import { globalCss, styled } from '../stitches.config';
 
@@ -57,9 +59,19 @@ const Background = styled('svg', {
 function App() {
     globalStyles();
 
+    console.log(data);
+
     // https://jotai.org/docs/utils/use-update-atom
     const setData = useUpdateAtom(dataAtom);
-    const addMarker = () => setData((d) => [random(data), ...d]);
+    const addMarker = () =>
+        setData((d) => {
+            // console.log(data.length);
+            const idx = random(0, data.length - 1);
+            const pulled = pullAt(data, idx);
+            // console.log(idx, pulled, data.length);
+
+            return [...pulled, ...d];
+        });
 
     return (
         <>
@@ -67,7 +79,7 @@ function App() {
             <Container size={2}>
                 <Flex direction="column" gap={1} align="center">
                     <NepalMap />
-                    <Button size={3} onClick={addMarker}>
+                    <Button size={3} onClick={addMarker} disabled={isEmpty(data)}>
                         Add
                     </Button>
                 </Flex>

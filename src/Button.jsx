@@ -24,6 +24,13 @@ const Button = styled('button', {
     fontWeight: 500,
     fontVariantNumeric: 'tabular-nums',
 
+    '&:disabled': {
+        backgroundColor: '$mauve2',
+        boxShadow: 'inset 0 0 0 1px $colors$mauve7',
+        color: '$mauve8',
+        pointerEvents: 'none'
+    },
+
     variants: {
         size: {
             1: {
