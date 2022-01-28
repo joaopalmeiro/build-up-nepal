@@ -3,6 +3,7 @@ import { styled } from '../stitches.config';
 import Button from './Button';
 import Container from './Container';
 import Flex from './Flex';
+import Grid from './Grid';
 import NepalMap from './NepalMap';
 
 // Source: https://ped.ro/
@@ -29,6 +30,9 @@ function App() {
                     <NepalMap />
                     <Button size={3}>Add</Button>
                 </Flex>
+                <Grid columns={2} gapX={1} gapY={2}>
+                    {/* https://cssreference.io/property/grid-auto-flow/ */}
+                </Grid>
             </Container>
             <Background>
                 <filter id="noise">
