@@ -2,6 +2,7 @@ import { styled } from '../stitches.config';
 
 import Button from './Button';
 import Container from './Container';
+import Flex from './Flex';
 import NepalMap from './NepalMap';
 
 // Source: https://ped.ro/
@@ -24,8 +25,10 @@ function App() {
     return (
         <>
             <Container size={2}>
-                <NepalMap />
-                <Button size={3}>Add</Button>
+                <Flex direction="column" gap={1} align="center">
+                    <NepalMap />
+                    <Button size={3}>Add</Button>
+                </Flex>
             </Container>
             <Background>
                 <filter id="noise">
