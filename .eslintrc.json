@@ -170,11 +170,12 @@
     "prefer-destructuring": [
       "error",
       {
+        // https://eslint.org/docs/rules/prefer-destructuring#when-not-to-use-it
         "array": true,
         "object": true
       },
       {
-        "enforceForRenamedProperties": true
+        "enforceForRenamedProperties": false
       }
     ],
     // https://eslint.org/docs/rules/prefer-exponentiation-operator

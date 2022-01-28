@@ -15,9 +15,10 @@ specifiers:
   eslint-plugin-react: ^7.28.0
   eslint-plugin-react-hooks: ^4.3.0
   jotai: ^1.5.3
+  just-remove: ^3.0.1
   lodash.isempty: ^4.4.0
-  lodash.pullat: ^4.6.0
-  lodash.random: ^3.2.0
+  lodash.range: ^3.2.0
+  lodash.sample: ^4.2.1
   prettier: ^2.5.1
   prop-types: ^15.8.1
   react: ^17.0.2
@@ -31,9 +32,10 @@ dependencies:
   '@stitches/react': 1.2.6_react@17.0.2
   d3-geo: 3.0.1
   jotai: 1.5.3_react@17.0.2
+  just-remove: 3.0.1
   lodash.isempty: 4.4.0
-  lodash.pullat: 4.6.0
-  lodash.random: 3.2.0
+  lodash.range: 3.2.0
+  lodash.sample: 4.2.1
   prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -2267,6 +2269,10 @@ packages:
       object.assign: 4.1.2
     dev: true
 
+  /just-remove/3.0.1:
+    resolution: {integrity: sha512-TUn9bQgOjL+eQyvGrD0Pov0JWik6TGaQHqCSB4bPES7f5CfrS2lh+b4E37eYxEBpHvFpn2ig3fNfu3FJl5albA==}
+    dev: false
+
   /language-subtag-registry/0.3.21:
     resolution: {integrity: sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg==}
     dev: true
@@ -2300,12 +2306,12 @@ packages:
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  /lodash.pullat/4.6.0:
-    resolution: {integrity: sha1-vfrPDiCf0n+WXnEfplp3SoTTAmE=}
+  /lodash.range/3.2.0:
+    resolution: {integrity: sha1-9GHliPZmg/fq3q3lE+OKaaVloV0=}
     dev: false
 
-  /lodash.random/3.2.0:
-    resolution: {integrity: sha1-luJOdjMzGZEw0sni/Vf5FwPMJi0=}
+  /lodash.sample/4.2.1:
+    resolution: {integrity: sha1-XkKRsMdT+hq+sKq4+ynfG2bwf20=}
     dev: false
 
   /loose-envify/1.4.0:

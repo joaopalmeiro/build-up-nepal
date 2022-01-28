@@ -43,4 +43,5 @@
 - [Radix Colors](https://www.radix-ui.com/colors):
   - They are JavaScript objects.
   - [Colors](https://www.radix-ui.com/docs/colors/palette-composition/the-scales), [combinations](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette), and [use cases](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale).
-- `pnpm install lodash.random lodash.pullat lodash.isempty`. [Lodash Modularized](https://www.npmjs.com/search?q=keywords:lodash-modularized) packages.
+- `pnpm install lodash.isempty lodash.range lodash.sample`. [Lodash Modularized](https://www.npmjs.com/search?q=keywords:lodash-modularized) packages.
+- `pnpm install just-remove`.

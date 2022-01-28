@@ -1,14 +1,12 @@
-import { useUpdateAtom } from 'jotai/utils';
+import { useAtomValue, useUpdateAtom } from 'jotai/utils';
 import isEmpty from 'lodash.isempty';
-import pullAt from 'lodash.pullat';
-import random from 'lodash.random';
+import sample from 'lodash.sample';
 
 import { globalCss, styled } from '../stitches.config';
 
-import { dataAtom } from './atoms';
+import { availableDataAtom, markersAtom } from './atoms';
 import Button from './Button';
 import Container from './Container';
-import data from './data.json';
 import Flex from './Flex';
 import Grid from './Grid';
 import NepalMap from './NepalMap';
@@ -59,18 +57,20 @@ const Background = styled('svg', {
 function App() {
     globalStyles();
 
-    console.log(data);
-
     // https://jotai.org/docs/utils/use-update-atom
-    const setData = useUpdateAtom(dataAtom);
-    const addMarker = () =>
-        setData((d) => {
-            // console.log(data.length);
-            const idx = random(0, data.length - 1);
-            const pulled = pullAt(data, idx);
-            // console.log(idx, pulled, data.length);
+    // https://jaketrent.com/post/remove-array-element-without-mutating
+    const setMarkers = useUpdateAtom(markersAtom);
+    const availableData = useAtomValue(availableDataAtom);
 
-            return [...pulled, ...d];
+    // console.log(availableData, isEmpty(availableData));
+
+    const addMarker = () =>
+        setMarkers((d) => {
+            const idx = sample(availableData);
+
+            // console.log(idx, data[idx]);
+
+            return [idx, ...d];
         });
 
     return (
@@ -79,7 +79,7 @@ function App() {
             <Container size={2}>
                 <Flex direction="column" gap={1} align="center">
                     <NepalMap />
-                    <Button size={3} onClick={addMarker} disabled={isEmpty(data)}>
+                    <Button size={3} onClick={addMarker} disabled={isEmpty(availableData)}>
                         Add
                     </Button>
                 </Flex>

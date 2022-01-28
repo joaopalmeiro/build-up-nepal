@@ -2,7 +2,8 @@ import { geoEqualEarth, geoPath } from 'd3-geo';
 import { useAtom } from 'jotai';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 
-import { dataAtom } from './atoms';
+import { markersAtom } from './atoms';
+import data from './data.json';
 import mapData from './map.json';
 import { getGoogleMapsUrl } from './utils';
 
@@ -10,8 +11,8 @@ const defaultWidth = 800; // px
 
 // https://www.react-simple-maps.io/docs/getting-started/
 function NepalMap() {
-    const [data] = useAtom(dataAtom);
-    // console.log(data);
+    const [dataIndices] = useAtom(markersAtom);
+    // console.log(dataIndices);
 
     // https://stackoverflow.com/a/40940028
     // https://www.react-simple-maps.io/docs/composable-map/
@@ -53,21 +54,25 @@ function NepalMap() {
             </Geographies>
             {/* https://www.react-simple-maps.io/docs/marker/ */}
             {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
-            {data.map(({ name, longitude, latitude }) => (
+            {dataIndices.map((idx) => {
+                const { name, longitude, latitude } = data[idx];
+
                 // Coordinates: [lon, lat]
-                <Marker
-                    key={`${name}-${longitude}-${latitude}`}
-                    coordinates={[longitude, latitude]}
-                >
-                    <a
-                        href={getGoogleMapsUrl(longitude, latitude)}
-                        target="_blank"
-                        rel="noreferrer"
+                return (
+                    <Marker
+                        key={`${name}-${longitude}-${latitude}`}
+                        coordinates={[longitude, latitude]}
                     >
-                        <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
-                    </a>
-                </Marker>
-            ))}
+                        <a
+                            href={getGoogleMapsUrl(longitude, latitude)}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
+                        </a>
+                    </Marker>
+                );
+            })}
         </ComposableMap>
     );
 }
