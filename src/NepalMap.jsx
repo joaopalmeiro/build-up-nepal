@@ -3,6 +3,7 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 
 import data from './data.json';
 import mapData from './map.json';
+import { getGoogleMapsUrl } from './utils';
 
 const defaultWidth = 800; // px
 
@@ -54,7 +55,13 @@ function NepalMap() {
             {markers.map(({ longitude, latitude }) => (
                 // Coordinates: [lon, lat]
                 <Marker key={`${longitude}-${latitude}`} coordinates={[longitude, latitude]}>
-                    <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
+                    <a
+                        href={getGoogleMapsUrl(longitude, latitude)}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
+                    </a>
                 </Marker>
             ))}
         </ComposableMap>
