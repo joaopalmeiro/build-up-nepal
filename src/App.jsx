@@ -1,10 +1,17 @@
-import { styled } from '../stitches.config';
+import { globalCss, styled } from '../stitches.config';
 
 import Button from './Button';
 import Container from './Container';
 import Flex from './Flex';
 import Grid from './Grid';
 import NepalMap from './NepalMap';
+
+// Source: https://www.joshwcomeau.com/css/custom-css-reset/
+// https://piccalil.li/blog/a-modern-css-reset/
+// https://stitches.dev/docs/styling#global-styles
+const globalStyles = globalCss({
+    '*, *::before, *::after': { boxSizing: 'border-box' }
+});
 
 // Source: https://ped.ro/
 const Background = styled('svg', {
@@ -23,6 +30,8 @@ const Background = styled('svg', {
 });
 
 function App() {
+    globalStyles();
+
     return (
         <>
             <Container size={2}>
