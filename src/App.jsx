@@ -10,7 +10,27 @@ import NepalMap from './NepalMap';
 // https://piccalil.li/blog/a-modern-css-reset/
 // https://stitches.dev/docs/styling#global-styles
 const globalStyles = globalCss({
-    '*, *::before, *::after': { boxSizing: 'border-box' }
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-box-sizing-model
+    '*, *::before, *::after': { boxSizing: 'border-box' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-remove-default-margin
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-tweaking-line-height
+    // body: { lineHeight: 1.5 },
+    '*': { margin: 0, lineHeight: 'calc(1em + 0.5rem)' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-percentage-based-heights
+    'html, body, #root': { height: '100%' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-font-smoothing
+    body: { WebkitFontSmoothing: 'antialiased' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-sensible-media-defaults
+    'img, picture, video, canvas, svg': { display: 'block', maxWidth: '100%' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-inherit-fonts-for-form-controls
+    'input, button, textarea, select': { font: 'inherit' },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-word-wrapping
+    'p, h1, h2, h3, h4, h5, h6': {
+        overflowWrap: 'break-word'
+        // hyphens: 'auto'
+    },
+    // https://www.joshwcomeau.com/css/custom-css-reset/#digit-root-stacking-context
+    '#root': { isolation: 'isolate' }
 });
 
 // Source: https://ped.ro/
