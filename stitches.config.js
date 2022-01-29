@@ -96,6 +96,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 marginRight: value
             }),
 
+            pb: (value) => ({
+                paddingBottom: value
+            }),
             px: (value) => ({
                 paddingLeft: value,
                 paddingRight: value

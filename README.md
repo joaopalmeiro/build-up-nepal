@@ -45,3 +45,4 @@
   - [Colors](https://www.radix-ui.com/docs/colors/palette-composition/the-scales), [combinations](https://www.radix-ui.com/docs/colors/palette-composition/composing-a-palette), and [use cases](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale).
 - `pnpm install lodash.isempty lodash.range lodash.sample lodash.merge`. [Lodash Modularized](https://www.npmjs.com/search?q=keywords:lodash-modularized) packages.
 - `pnpm install just-remove`.
+- `pnpm install @radix-ui/react-tooltip`.
