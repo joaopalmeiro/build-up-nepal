@@ -23,6 +23,7 @@ const Button = styled('button', {
     fontFamily: '$sans',
     fontWeight: '$2',
     fontVariantNumeric: 'tabular-nums',
+    // cursor: 'pointer',
 
     '&:disabled': {
         backgroundColor: '$mauve2',

@@ -28,7 +28,8 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 ...mauveA,
 
                 hiContrast: '$mauve12',
-                loContrast: 'white'
+                loContrast: 'white',
+                transparentPanel: 'hsl(0 0% 0% / 97%)'
             },
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18
@@ -47,7 +48,8 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             },
             fontWeights: {
                 1: 400,
-                2: 500
+                2: 500,
+                3: 600
             },
             radii: {
                 1: '4px',
@@ -96,9 +98,6 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 marginRight: value
             }),
 
-            pb: (value) => ({
-                paddingBottom: value
-            }),
             px: (value) => ({
                 paddingLeft: value,
                 paddingRight: value

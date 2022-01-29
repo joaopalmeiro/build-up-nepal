@@ -11,6 +11,7 @@ import Flex from './Flex';
 import Grid from './Grid';
 import Header from './Header';
 import NepalMap from './NepalMap';
+import Tooltip from './Tooltip';
 
 // Source: https://www.joshwcomeau.com/css/custom-css-reset/
 // https://piccalil.li/blog/a-modern-css-reset/
@@ -81,9 +82,11 @@ function App() {
                 <Flex direction="column" gap={1} align="center">
                     <Header />
                     <NepalMap />
-                    <Button size={3} onClick={addMarker} disabled={isEmpty(availableData)}>
-                        Add
-                    </Button>
+                    <Tooltip content="Click to check a new project">
+                        <Button size={3} onClick={addMarker} disabled={isEmpty(availableData)}>
+                            Add
+                        </Button>
+                    </Tooltip>
                 </Flex>
                 <Grid columns={2} gapX={1} gapY={2}>
                     {/* https://cssreference.io/property/grid-auto-flow/ */}
