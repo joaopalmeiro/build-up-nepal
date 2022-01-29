@@ -14,6 +14,10 @@ import { createStitches } from '@stitches/react';
 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } =
     createStitches({
         media: {
+            bp1: '(min-width: 520px)',
+            bp2: '(min-width: 900px)',
+            bp3: '(min-width: 1200px)',
+            bp4: '(min-width: 1800px)',
             // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/any-hover
             hover: '(any-hover: hover)'
         },
@@ -40,6 +44,10 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 7: '27px',
                 8: '35px',
                 9: '59px'
+            },
+            fontWeights: {
+                1: 400,
+                2: 500
             },
             radii: {
                 1: '4px',

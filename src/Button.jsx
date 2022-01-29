@@ -21,7 +21,7 @@ const Button = styled('button', {
 
     // Custom
     fontFamily: '$sans',
-    fontWeight: 500,
+    fontWeight: '$2',
     fontVariantNumeric: 'tabular-nums',
 
     '&:disabled': {

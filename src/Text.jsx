@@ -9,7 +9,7 @@ const Text = styled('span', {
     // Reset
     lineHeight: '1',
     margin: '0',
-    fontWeight: 400,
+    fontWeight: '$1',
     fontVariantNumeric: 'tabular-nums',
     display: 'block',
 

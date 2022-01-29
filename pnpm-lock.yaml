@@ -17,6 +17,7 @@ specifiers:
   jotai: ^1.5.3
   just-remove: ^3.0.1
   lodash.isempty: ^4.4.0
+  lodash.merge: ^4.6.2
   lodash.range: ^3.2.0
   lodash.sample: ^4.2.1
   prettier: ^2.5.1
@@ -34,6 +35,7 @@ dependencies:
   jotai: 1.5.3_react@17.0.2
   just-remove: 3.0.1
   lodash.isempty: 4.4.0
+  lodash.merge: 4.6.2
   lodash.range: 3.2.0
   lodash.sample: 4.2.1
   prop-types: 15.8.1

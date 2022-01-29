@@ -9,6 +9,7 @@ import Button from './Button';
 import Container from './Container';
 import Flex from './Flex';
 import Grid from './Grid';
+import Header from './Header';
 import NepalMap from './NepalMap';
 
 // Source: https://www.joshwcomeau.com/css/custom-css-reset/
@@ -78,6 +79,7 @@ function App() {
             {/* Rendered: {++useRef(0).current} */}
             <Container size={2}>
                 <Flex direction="column" gap={1} align="center">
+                    <Header />
                     <NepalMap />
                     <Button size={3} onClick={addMarker} disabled={isEmpty(availableData)}>
                         Add
