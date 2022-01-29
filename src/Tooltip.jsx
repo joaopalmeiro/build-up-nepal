@@ -5,7 +5,7 @@
 // https://www.radix-ui.com/docs/primitives/components/tooltip
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
-import { styled, keyframes } from '../stitches.config';
+import { keyframes, styled } from '../stitches.config';
 
 import Text from './Text';
 

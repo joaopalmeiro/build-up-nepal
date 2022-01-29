@@ -50,7 +50,7 @@ const Link = styled('a', {
             },
             contrast: {
                 color: '$hiContrast',
-                textDecoration: 'underline',
+                textDecorationLine: 'underline',
                 // textDecorationColor: '$mauve4',
                 '@hover': {
                     '&:hover': {
