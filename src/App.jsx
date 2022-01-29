@@ -97,7 +97,7 @@ function App() {
                     {/* https://cssreference.io/property/grid-auto-flow/ */}
                 </Grid>
                 <Container size="1">
-                    <Image src={vfsgUrl} />
+                    <Image src={vfsgUrl} alt="Project and visualization by Viz for Social Good" />
                 </Container>
             </Container>
             <Background>
