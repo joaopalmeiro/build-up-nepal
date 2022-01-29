@@ -10,8 +10,13 @@ import Container from './Container';
 import Flex from './Flex';
 import Grid from './Grid';
 import Header from './Header';
+import Image from './Image';
+import vfsgUrl from './img/vfsg.png';
 import NepalMap from './NepalMap';
 import Tooltip from './Tooltip';
+
+// https://vitejs.dev/guide/assets.html#importing-asset-as-url
+// https://vitejs.dev/config/#build-assetsinlinelimit
 
 // Source: https://www.joshwcomeau.com/css/custom-css-reset/
 // https://piccalil.li/blog/a-modern-css-reset/
@@ -78,19 +83,22 @@ function App() {
     return (
         <>
             {/* Rendered: {++useRef(0).current} */}
-            <Container size={2}>
-                <Flex direction="column" gap={1} align="center">
+            <Container size="2">
+                <Flex direction="column" gap="1" align="center">
                     <Header />
                     <NepalMap />
                     <Tooltip content="Click to check a new project">
-                        <Button size={3} onClick={addMarker} disabled={isEmpty(availableData)}>
+                        <Button size="3" onClick={addMarker} disabled={isEmpty(availableData)}>
                             Add
                         </Button>
                     </Tooltip>
                 </Flex>
-                <Grid columns={2} gapX={1} gapY={2}>
+                <Grid columns="2" gapX="1" gapY="2">
                     {/* https://cssreference.io/property/grid-auto-flow/ */}
                 </Grid>
+                <Container size="1">
+                    <Image src={vfsgUrl} />
+                </Container>
             </Container>
             <Background>
                 <filter id="noise">
