@@ -23,6 +23,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         },
 
         theme: {
+            borderWidths: {
+                1: '1px'
+            },
             colors: {
                 ...mauve,
                 ...mauveA,
@@ -91,6 +94,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
         },
 
         utils: {
+            mb: (value) => ({
+                marginBottom: value
+            }),
             ml: (value) => ({
                 marginLeft: value
             }),
@@ -98,6 +104,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 marginRight: value
             }),
 
+            p: (value) => ({
+                padding: value
+            }),
             px: (value) => ({
                 paddingLeft: value,
                 paddingRight: value

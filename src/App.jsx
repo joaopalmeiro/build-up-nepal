@@ -7,6 +7,7 @@ import { globalCss, styled } from '../stitches.config';
 import { availableDataAtom, markersAtom } from './atoms';
 import Button from './Button';
 import Container from './Container';
+import Counter from './Counter';
 import Flex from './Flex';
 import Grid from './Grid';
 import Header from './Header';
@@ -87,11 +88,12 @@ function App() {
                 <Flex direction="column" gap="1" align="center">
                     <Header />
                     <NepalMap />
-                    <Tooltip content="Click to check a new project">
+                    <Tooltip content="Click to check a new enterprise/project">
                         <Button size="3" onClick={addMarker} disabled={isEmpty(availableData)}>
                             Add
                         </Button>
                     </Tooltip>
+                    <Counter />
                 </Flex>
                 <Grid columns="2" gapX="1" gapY="2">
                     {/* https://cssreference.io/property/grid-auto-flow/ */}
