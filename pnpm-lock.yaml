@@ -7,6 +7,7 @@ specifiers:
   '@radix-ui/react-tooltip': ^0.1.6
   '@stitches/react': ^1.2.6
   '@vitejs/plugin-react': ^1.0.7
+  d3-format: ^3.1.0
   d3-geo: ^3.0.1
   eslint: ^8.7.0
   eslint-config-prettier: ^8.3.0
@@ -21,6 +22,7 @@ specifiers:
   lodash.merge: ^4.6.2
   lodash.range: ^3.2.0
   lodash.sample: ^4.2.1
+  lodash.sumby: ^4.6.0
   prettier: ^2.5.1
   prop-types: ^15.8.1
   react: ^17.0.2
@@ -33,6 +35,7 @@ dependencies:
   '@radix-ui/colors': 0.1.8
   '@radix-ui/react-tooltip': 0.1.6_react-dom@17.0.2+react@17.0.2
   '@stitches/react': 1.2.6_react@17.0.2
+  d3-format: 3.1.0
   d3-geo: 3.0.1
   jotai: 1.5.3_react@17.0.2
   just-remove: 3.0.1
@@ -40,6 +43,7 @@ dependencies:
   lodash.merge: 4.6.2
   lodash.range: 3.2.0
   lodash.sample: 4.2.1
+  lodash.sumby: 4.6.0
   prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -1448,6 +1452,11 @@ packages:
     resolution: {integrity: sha512-68/n9JWarxXkOWMshcT5IcjbB+agblQUaIsbnXmrzejn2O82n3p2A9R2zEB9HIEFWKFwPAEDDN8gR0VdSAyyAQ==}
     dev: false
 
+  /d3-format/3.1.0:
+    resolution: {integrity: sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==}
+    engines: {node: '>=12'}
+    dev: false
+
   /d3-geo/2.0.2:
     resolution: {integrity: sha512-8pM1WGMLGFuhq9S+FpPURxic+gKzjluCD/CHTuUF3mXMeiCo0i6R0tO1s4+GArRFde96SLcW/kOFRjoAosPsFA==}
     dependencies:
@@ -2421,6 +2430,10 @@ packages:
 
   /lodash.sample/4.2.1:
     resolution: {integrity: sha1-XkKRsMdT+hq+sKq4+ynfG2bwf20=}
+    dev: false
+
+  /lodash.sumby/4.6.0:
+    resolution: {integrity: sha1-fYdzfdshbaL35efNLdnEA6eIc0Y=}
     dev: false
 
   /loose-envify/1.4.0:

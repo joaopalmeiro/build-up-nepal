@@ -10,6 +10,7 @@
 import { atom } from 'jotai';
 import remove from 'just-remove';
 import range from 'lodash.range';
+import sumBy from 'lodash.sumby';
 
 import data from './data.json';
 
@@ -17,3 +18,9 @@ const dataAtom = atom(range(data.length));
 
 export const markersAtom = atom([]);
 export const availableDataAtom = atom((get) => remove(get(dataAtom), get(markersAtom)));
+
+// https://lodash.com/docs/4.17.15#sumBy
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed (`.toFixed(2)`)
+export const carbonAtom = atom((get) => sumBy(get(markersAtom), (i) => data[i].co2_saved));
+
+export const housesAtom = atom((get) => sumBy(get(markersAtom), (i) => data[i].houses_built) ?? 0);

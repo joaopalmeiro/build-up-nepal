@@ -12,7 +12,7 @@ const defaultWidth = 800; // px
 // https://www.react-simple-maps.io/docs/getting-started/
 function NepalMap() {
     const [dataIndices] = useAtom(markersAtom);
-    // console.log(dataIndices);
+    // console.log(dataIndices, data[dataIndices[0]]);
 
     // https://stackoverflow.com/a/40940028
     // https://www.react-simple-maps.io/docs/composable-map/
