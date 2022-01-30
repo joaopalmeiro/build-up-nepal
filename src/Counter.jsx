@@ -14,26 +14,28 @@ function Counter() {
     return (
         <>
             <Paragraph variant="gray">{intro}</Paragraph>
-            <Alert>
-                <Flex align="center" gap="2">
-                    <Text size="3" css={{ fontWeight: '$2' }}>
-                        TODO
-                    </Text>
-                    <Text size="2" variant="gray">
-                        tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
-                    </Text>
-                </Flex>
-            </Alert>
-            <Alert>
-                <Flex align="center" gap="2">
-                    <Text size="3" css={{ fontWeight: '$2' }}>
-                        TODO
-                    </Text>
-                    <Text size="2" variant="gray">
-                        houses built
-                    </Text>
-                </Flex>
-            </Alert>
+            <Flex gap="1">
+                <Alert>
+                    <Flex align="center" gap="2">
+                        <Text size="3" css={{ fontWeight: '$2' }}>
+                            TODO
+                        </Text>
+                        <Text size="2" variant="gray">
+                            tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
+                        </Text>
+                    </Flex>
+                </Alert>
+                <Alert>
+                    <Flex align="center" gap="2">
+                        <Text size="3" css={{ fontWeight: '$2' }}>
+                            TODO
+                        </Text>
+                        <Text size="2" variant="gray">
+                            houses built
+                        </Text>
+                    </Flex>
+                </Alert>
+            </Flex>
         </>
     );
 }
