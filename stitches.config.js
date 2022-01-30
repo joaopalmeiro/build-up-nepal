@@ -1,5 +1,5 @@
 // import { theme as modulzTheme } from '@modulz/design-system';
-import { mauve, mauveA } from '@radix-ui/colors';
+import { indigo, mauve, mauveA, red } from '@radix-ui/colors';
 import { createStitches } from '@stitches/react';
 
 // console.log(mauve);
@@ -29,6 +29,8 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             colors: {
                 ...mauve,
                 ...mauveA,
+                ...red,
+                ...indigo,
 
                 hiContrast: '$mauve12',
                 loContrast: 'white',
