@@ -14,6 +14,7 @@
 - [Nepal - Subnational Administrative Boundaries](https://data.humdata.org/dataset/administrative-bounadries-of-nepal) dataset ([HDX](https://data.humdata.org/)).
 - [Mapshaper](https://github.com/mbloch/mapshaper).
 - [@modulz/design-system](https://www.npmjs.com/package/@modulz/design-system).
+- [Five-number summary](https://en.wikipedia.org/wiki/Five-number_summary) Wikipedia page.
 
 ## Notes
 
