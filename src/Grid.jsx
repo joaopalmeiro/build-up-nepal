@@ -40,6 +40,7 @@ const Grid = styled('div', {
                 justifyContent: 'space-between'
             }
         },
+        // https://cssreference.io/property/grid-auto-flow/
         flow: {
             row: {
                 gridAutoFlow: 'row'

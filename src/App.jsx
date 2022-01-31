@@ -8,10 +8,10 @@ import { globalCss, styled } from '../stitches.config';
 import { availableDataAtom, markersAtom } from './atoms';
 import Box from './Box';
 import Button from './Button';
+import Cards from './Cards';
 import Container from './Container';
 import Counter from './Counter';
 import Flex from './Flex';
-import Grid from './Grid';
 import Header from './Header';
 import Image from './Image';
 import vfsgUrl from './img/vfsg.png';
@@ -105,9 +105,7 @@ function App() {
                     </Tooltip>
                     <Counter />
                 </Flex>
-                <Grid columns="2" gapX="1" gapY="2">
-                    {/* https://cssreference.io/property/grid-auto-flow/ */}
-                </Grid>
+                <Cards />
                 <Container size="1">
                     <Image src={vfsgUrl} alt="Project and visualization by Viz for Social Good" />
                 </Container>
