@@ -203,7 +203,7 @@
     // https://eslint.org/docs/rules/symbol-description
     "symbol-description": "error",
     // https://eslint.org/docs/rules/yoda
-    "yoda": ["error", "always"],
+    "yoda": ["error", "never"],
     "import/order": [
       "warn",
       {

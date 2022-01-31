@@ -15,6 +15,7 @@
 - [Mapshaper](https://github.com/mbloch/mapshaper).
 - [@modulz/design-system](https://www.npmjs.com/package/@modulz/design-system).
 - [Five-number summary](https://en.wikipedia.org/wiki/Five-number_summary) Wikipedia page.
+- [Flag of Nepal](https://commons.wikimedia.org/wiki/File:Flag_of_Nepal.svg) and [Flag of Nepal](https://en.wikipedia.org/wiki/Flag_of_Nepal) Wikipedia page.
 
 ## Notes
 

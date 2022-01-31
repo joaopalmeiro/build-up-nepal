@@ -1,3 +1,4 @@
+import { PlusIcon } from '@radix-ui/react-icons';
 import { useAtomValue, useUpdateAtom } from 'jotai/utils';
 import isEmpty from 'lodash.isempty';
 import sample from 'lodash.sample';
@@ -5,6 +6,7 @@ import sample from 'lodash.sample';
 import { globalCss, styled } from '../stitches.config';
 
 import { availableDataAtom, markersAtom } from './atoms';
+import Box from './Box';
 import Button from './Button';
 import Container from './Container';
 import Counter from './Counter';
@@ -78,7 +80,8 @@ function App() {
 
             // console.log(idx, data[idx]);
 
-            return [idx, ...d];
+            // return [idx, ...d];
+            return [...d, idx];
         });
 
     return (
@@ -90,6 +93,13 @@ function App() {
                     <NepalMap />
                     <Tooltip content="Click to check a new enterprise/project">
                         <Button size="3" onClick={addMarker} disabled={isEmpty(availableData)}>
+                            <Box
+                                css={{
+                                    mr: '$1'
+                                }}
+                            >
+                                <PlusIcon />
+                            </Box>
                             Add
                         </Button>
                     </Tooltip>

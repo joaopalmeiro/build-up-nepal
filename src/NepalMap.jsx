@@ -2,6 +2,8 @@ import { geoEqualEarth, geoPath } from 'd3-geo';
 import { useAtom } from 'jotai';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 
+import { theme } from '../stitches.config';
+
 import { markersAtom } from './atoms';
 import data from './data.json';
 import mapData from './map.json';
@@ -13,6 +15,9 @@ const defaultWidth = 800; // px
 function NepalMap() {
     const [dataIndices] = useAtom(markersAtom);
     // console.log(dataIndices, data[dataIndices[0]]);
+
+    // https://stitches.dev/docs/theming#theme-object
+    // console.log(theme);
 
     // https://stackoverflow.com/a/40940028
     // https://www.react-simple-maps.io/docs/composable-map/
@@ -44,21 +49,32 @@ function NepalMap() {
     return (
         // https://www.buildupnepal.com/project-map/
         // https://www.react-simple-maps.io/docs/composable-map/
-        // https://www.react-simple-maps.io/examples/basic-markers/
         // https://github.com/zcreativelabs/react-simple-maps/blob/v2.2.0/src/components/MapProvider.js#L27
         <ComposableMap projection={projection} width={defaultWidth} height={mapHeight}>
             <Geographies geography={mapData}>
                 {({ geographies }) =>
-                    geographies.map((geo) => <Geography key={geo.rsmKey} geography={geo} />)
+                    geographies.map((geo) => (
+                        // https://github.com/zcreativelabs/react-simple-maps/blob/v2.2.0/src/components/Geography.js#L53
+                        // https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale#use-cases
+                        <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            stroke={theme.colors.mauve9.value}
+                            // stroke={theme.colors.loContrast.value}
+                            // strokeWidth={0.5}
+                            strokeWidth={0.25}
+                            fill={theme.colors.hiContrast.value}
+                        />
+                    ))
                 }
             </Geographies>
-            {/* https://www.react-simple-maps.io/docs/marker/ */}
-            {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
-            {dataIndices.map((idx) => {
+
+            {dataIndices.map((idx, i) => {
                 const { name, longitude, latitude } = data[idx];
 
                 // Coordinates: [lon, lat]
                 return (
+                    // https://github.com/zcreativelabs/react-simple-maps/blob/v2.2.0/src/components/Marker.js#L60
                     <Marker
                         key={`${name}-${longitude}-${latitude}`}
                         coordinates={[longitude, latitude]}
@@ -68,7 +84,38 @@ function NepalMap() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <circle r={5} fill="#F53" stroke="white" strokeWidth={0.5} />
+                            {/* https://jakearchibald.github.io/svgomg/ */}
+                            {/* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */}
+                            {/* https://www.react-simple-maps.io/examples/custom-markers/ */}
+                            {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
+                            {/* https://www.react-simple-maps.io/docs/marker/ */}
+                            {/* Obtained from Figma. */}
+                            {i === dataIndices.length - 1 ? (
+                                // https://caniuse.com/vector-effect
+                                // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect
+                                // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering
+                                // https://en.wikipedia.org/wiki/Flag_of_Nepal
+                                <path
+                                    // Source: src/img/flag_nepal_sun_1px_svgo.svg
+                                    d="M.275701.275701.0669782.25.193536.417445 0 .5l.193536.081776-.1265578.167445L.275701.72352.25.932632.417445.806075.5 1 .581776.806075.75.933022.724299.724299l.208723.02609L.806464.582944 1 .501168.806464.418614.933022.251168.724299.27648.75.0677569.582555.194315.5 0 .418224.193536.25.0669781.275701.275701Z"
+                                    fill={theme.colors.loContrast.value}
+                                    transform="translate(-11 -11) scale(22)"
+                                    // transform="translate(-10 -10) scale(20)"
+                                    vectorEffect="non-scaling-stroke"
+                                    stroke={theme.colors.hiContrast.value}
+                                    strokeWidth={0.5}
+                                />
+                            ) : (
+                                <circle
+                                    r={4}
+                                    // r={5}
+                                    // fill="#F53"
+                                    fill={theme.colors.red9.value}
+                                    // stroke="white"
+                                    stroke={theme.colors.hiContrast.value}
+                                    strokeWidth={0.5}
+                                />
+                            )}
                         </a>
                     </Marker>
                 );
