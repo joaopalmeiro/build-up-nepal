@@ -89,7 +89,6 @@ function NepalMap() {
                             {/* https://www.react-simple-maps.io/examples/custom-markers/ */}
                             {/* https://www.react-simple-maps.io/examples/basic-markers/ */}
                             {/* https://www.react-simple-maps.io/docs/marker/ */}
-                            {/* Obtained from Figma. */}
                             {i === dataIndices.length - 1 ? (
                                 // https://caniuse.com/vector-effect
                                 // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect
