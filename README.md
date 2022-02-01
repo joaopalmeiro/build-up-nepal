@@ -48,3 +48,6 @@
 - `pnpm install lodash.isempty lodash.range lodash.sample lodash.merge`. [Lodash Modularized](https://www.npmjs.com/search?q=keywords:lodash-modularized) packages.
 - `pnpm install just-remove`.
 - `pnpm install @radix-ui/react-tooltip`.
+- Hooks:
+  - [usehooks-ts](https://usehooks-ts.com/) package.
+  - [react-hook](https://github.com/jaredLunde/react-hook) packages.
