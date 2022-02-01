@@ -14,6 +14,7 @@ import Counter from './Counter';
 import Flex from './Flex';
 import Header from './Header';
 import Image from './Image';
+import bunUrl from './img/bun_svgo_width_height.svg';
 import vfsgUrl from './img/vfsg.png';
 import NepalMap from './NepalMap';
 import Tooltip from './Tooltip';
@@ -67,6 +68,8 @@ const Background = styled('svg', {
 function App() {
     globalStyles();
 
+    // console.log(vfsgUrl, bunUrl);
+
     // https://jotai.org/docs/utils/use-update-atom
     // https://jaketrent.com/post/remove-array-element-without-mutating
     const setMarkers = useUpdateAtom(markersAtom);
@@ -106,8 +109,21 @@ function App() {
                     <Counter />
                 </Flex>
                 <Cards />
-                <Container size="1">
-                    <Image src={vfsgUrl} alt="Project and visualization by Viz for Social Good" />
+                <Container size="2">
+                    <Flex direction="row" align="center" gap="7">
+                        <Box css={{ flexShrink: 2 }}>
+                            <Image
+                                src={vfsgUrl}
+                                alt="Project and visualization by Viz for Social Good."
+                            />
+                        </Box>
+                        <Box css={{ flexShrink: 1 }}>
+                            <Image
+                                src={bunUrl}
+                                alt="Build up Nepal logo. It consists of four blue bricks and the name in red. Blue and red are two of the colors of the Nepalese flag."
+                            />
+                        </Box>
+                    </Flex>
                 </Container>
             </Container>
             <Background>
