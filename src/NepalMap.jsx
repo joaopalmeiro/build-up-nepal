@@ -95,7 +95,7 @@ function NepalMap() {
                                 // https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering
                                 // https://en.wikipedia.org/wiki/Flag_of_Nepal
                                 <path
-                                    // Source: src/img/flag_nepal_sun_1px_svgo.svg
+                                    // Source: img/flag_nepal_sun_1px_svgo.svg
                                     d="M.275701.275701.0669782.25.193536.417445 0 .5l.193536.081776-.1265578.167445L.275701.72352.25.932632.417445.806075.5 1 .581776.806075.75.933022.724299.724299l.208723.02609L.806464.582944 1 .501168.806464.418614.933022.251168.724299.27648.75.0677569.582555.194315.5 0 .418224.193536.25.0669781.275701.275701Z"
                                     fill={theme.colors.loContrast.value}
                                     transform="translate(-11 -11) scale(22)"
