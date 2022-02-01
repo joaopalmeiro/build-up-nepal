@@ -109,9 +109,10 @@ function App() {
                     <Counter />
                 </Flex>
                 <Cards />
-                <Container size="2">
-                    <Flex direction="row" align="center" gap="7">
-                        <Box css={{ flexShrink: 2 }}>
+                <Container size="1">
+                    <Flex direction="row" align="center" justify="center" gap="5">
+                        {/* https://stitches.dev/docs/overriding-styles */}
+                        <Box css={{ flexShrink: 1.25 }}>
                             <Image
                                 src={vfsgUrl}
                                 alt="Project and visualization by Viz for Social Good."
