@@ -77,6 +77,13 @@ const Link = styled('a', {
                 '&:focus': {
                     outlineColor: '$mauve8'
                 }
+            },
+            indigo: {
+                color: '$indigo11',
+                textDecorationColor: '$indigo4',
+                '&:focus': {
+                    outlineColor: '$indigo8'
+                }
             }
         }
     },

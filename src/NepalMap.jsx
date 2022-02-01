@@ -18,6 +18,7 @@ function NepalMap() {
 
     // https://stitches.dev/docs/theming#theme-object
     // console.log(theme);
+    // console.log(theme.colors.indigo11.value, theme.colors.red11.value, theme.colors.mauve12.value);
 
     // https://stackoverflow.com/a/40940028
     // https://www.react-simple-maps.io/docs/composable-map/

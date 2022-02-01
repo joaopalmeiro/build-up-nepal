@@ -12,6 +12,7 @@ import Cards from './Cards';
 import Container from './Container';
 import Counter from './Counter';
 import Flex from './Flex';
+import Footer from './Footer';
 import Header from './Header';
 import Image from './Image';
 import bunUrl from './img/bun_svgo_width_height.svg';
@@ -126,6 +127,7 @@ function App() {
                         </Box>
                     </Flex>
                 </Container>
+                <Footer />
             </Container>
             <Background>
                 <filter id="noise">

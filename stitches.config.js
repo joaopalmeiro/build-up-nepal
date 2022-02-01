@@ -34,7 +34,8 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
 
                 hiContrast: '$mauve12',
                 loContrast: 'white',
-                transparentPanel: 'hsl(0 0% 0% / 97%)'
+                transparentPanel: 'hsl(0 0% 0% / 97%)',
+                panel: 'white'
             },
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18
@@ -112,6 +113,10 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             px: (value) => ({
                 paddingLeft: value,
                 paddingRight: value
+            }),
+
+            ta: (value) => ({
+                textAlign: value
             }),
 
             userSelect: (value) => ({
