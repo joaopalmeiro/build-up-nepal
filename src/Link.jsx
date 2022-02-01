@@ -1,5 +1,6 @@
 import { styled } from '../stitches.config';
 
+import bunLogomarkUrl from './img/bun_logomark_svgo.svg';
 import Text from './Text';
 
 // Source:
@@ -37,6 +38,22 @@ const Link = styled('a', {
     // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1493
     [`& ${Text}`]: {
         color: 'inherit'
+    },
+
+    // Source:
+    // - https://www.zachleat.com/web/external-link-favicons/
+    // - https://www.zachleat.com/web/indieweb-avatar/
+    // - https://kikobeats.com/tesla-motors-explained
+    '&[href^="https://www.buildupnepal.com"]:before': {
+        content: '""',
+        display: 'inline-block',
+        verticalAlign: 'text-bottom',
+        width: '1em',
+        height: '1em',
+        margin: '0 .2em',
+        backgroundSize: 'contain',
+        backgroundImage: `url(${bunLogomarkUrl})`,
+        backgroundRepeat: 'no-repeat'
     },
 
     variants: {
