@@ -43,7 +43,9 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             },
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18
-                sans: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji'
+                // https://github.com/mantinedev/mantine/blob/3.6.5/src/mantine-styles/src/theme/default-theme.ts#L20
+                sans: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
+                mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace'
             },
             fontSizes: {
                 1: '12px',

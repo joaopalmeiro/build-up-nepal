@@ -2,6 +2,7 @@ import { styled } from '../stitches.config';
 
 // Source: https://github.com/radix-ui/design-system/blob/v0.6.2/components/Button.tsx
 // https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric
+// https://www.radix-ui.com/docs/primitives/components/dialog
 const Button = styled('button', {
     // Reset
     all: 'unset',
