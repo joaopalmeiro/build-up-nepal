@@ -42,9 +42,18 @@ const Card = styled('div', {
         right: 0,
         bottom: 0,
         left: 0,
-        boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.1)',
+        // boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.1)',
+        boxShadow: 'inset 0 0 0 1px $colors$mauve6',
         borderRadius: '$3',
         pointerEvents: 'none'
+    },
+
+    variants: {
+        variant: {
+            gray: {
+                backgroundColor: '$mauve2'
+            }
+        }
     }
 });
 

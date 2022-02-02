@@ -1,4 +1,4 @@
-import { PlusIcon } from '@radix-ui/react-icons';
+import { DrawingPinIcon } from '@radix-ui/react-icons';
 import { useAtomValue, useUpdateAtom } from 'jotai/utils';
 import isEmpty from 'lodash.isempty';
 import sample from 'lodash.sample';
@@ -102,7 +102,8 @@ function App() {
                                     mr: '$1'
                                 }}
                             >
-                                <PlusIcon />
+                                {/* <PlusIcon /> */}
+                                <DrawingPinIcon />
                             </Box>
                             Add
                         </Button>
