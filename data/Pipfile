@@ -13,6 +13,7 @@ inflection = "*"
 bleach = "*"
 python-fx = "==0.1.0b2.post1"
 jsondiff = "*"
+wasabi = "*"
 
 [dev-packages]
 
