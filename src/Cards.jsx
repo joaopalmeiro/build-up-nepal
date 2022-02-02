@@ -6,8 +6,11 @@ import Badge from './components/Badge';
 import data from './data.json';
 import Grid from './Grid';
 import Heading from './Heading';
+import Text from './Text';
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
+// https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
 function Cards() {
     const [dataIndices] = useAtom(markersAtom);
     // console.log(dataIndices);
@@ -20,6 +23,15 @@ function Cards() {
 
                 const projectName = data[idx].name;
                 const projectStatus = data[idx].status;
+                const projectStartDate = data[idx].start_date_name;
+                const projectDescription = data[idx].description;
+
+                const numberHouses = data[idx].houses_built;
+                const numberSchools = data[idx].schools;
+
+                const numberBricks = data[idx].bricks_produced;
+                const numberCarbon = data[idx].co2_saved;
+                const numberJobs = data[idx].total_jobs;
 
                 return (
                     <Card key={idx} css={{ p: '$3' }}>
@@ -29,6 +41,8 @@ function Cards() {
                         <Badge size="1" variant="gray">
                             {projectStatus}
                         </Badge>
+                        <Text css={{ lineHeight: '23px' }}>{numberHouses}</Text>
+                        <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
                     </Card>
                 );
             })}
