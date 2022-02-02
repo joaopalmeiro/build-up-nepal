@@ -10,6 +10,9 @@ black = {version = "==21.12b0", extras = ["jupyter"]}
 dtale = "*"
 geopandas = "*"
 inflection = "*"
+bleach = "*"
+python-fx = "==0.1.0b2.post1"
+jsondiff = "*"
 
 [dev-packages]
 
