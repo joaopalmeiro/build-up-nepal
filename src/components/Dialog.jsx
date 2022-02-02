@@ -2,12 +2,14 @@
 // - https://www.radix-ui.com/docs/primitives/components/dialog
 // - https://github.com/radix-ui/design-system/blob/v0.6.2/components/Dialog.tsx
 // - https://design-system.modulz-deploys.com/#dialog
+// - https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1715
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
+import { forwardRef } from 'react';
 
 import { styled } from '../../stitches.config';
 
-import { IconButton } from './IconButton';
+import IconButton from './IconButton';
 import { overlayStyles } from './Overlay';
 import { panelStyles } from './Panel';
 
@@ -37,4 +39,33 @@ const StyledContent = styled(DialogPrimitive.Content, panelStyles, {
     }
 });
 
-// TODO
+const StyledCloseButton = styled(DialogPrimitive.Close, {
+    position: 'absolute',
+    top: '$2',
+    right: '$2'
+});
+
+// https://www.radix-ui.com/docs/primitives/components/dialog#abstract-the-overlay-and-the-close-button
+export const DialogContent = forwardRef(function DialogContent({ children, ...props }, ref) {
+    return (
+        <DialogPrimitive.Portal>
+            <StyledOverlay />
+            <StyledContent {...props} ref={ref}>
+                {children}
+                <StyledCloseButton asChild>
+                    <IconButton variant="ghost" aria-label="Close">
+                        <Cross1Icon />
+                    </IconButton>
+                </StyledCloseButton>
+            </StyledContent>
+        </DialogPrimitive.Portal>
+    );
+});
+
+// https://github.com/radix-ui/primitives/issues/1086
+export const Dialog = DialogPrimitive.Root;
+export const DialogTrigger = DialogPrimitive.Trigger;
+
+// https://www.radix-ui.com/docs/primitives/components/dialog#title
+// export const DialogTitle = DialogPrimitive.Title;
+// export const DialogDescription = DialogPrimitive.Description;

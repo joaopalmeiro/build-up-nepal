@@ -4,12 +4,15 @@ import { useAtom } from 'jotai';
 import { markersAtom } from './atoms';
 import Box from './Box';
 import Card from './Card';
+import Abbr from './components/Abbr';
 import Badge from './components/Badge';
+import { Dialog, DialogContent, DialogTrigger } from './components/Dialog';
 import IconButton from './components/IconButton';
 import data from './data.json';
 import Flex from './Flex';
 import Grid from './Grid';
 import Heading from './Heading';
+import Paragraph from './Paragraph';
 import Text from './Text';
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
@@ -39,6 +42,12 @@ function Cards() {
                 const projectStartDate = data[idx].start_date_name;
                 const projectDescription = data[idx].description;
 
+                // https://en.wikipedia.org/wiki/Nepal#Administrative_divisions
+                // Province (7) > District (77)
+                const { district } = data[idx];
+                // https://en.wikipedia.org/wiki/Madhesh_Province
+                const province = data[idx].province_name;
+
                 const numberHouses = data[idx].houses_built;
                 const numberSchools = data[idx].schools;
 
@@ -67,12 +76,10 @@ function Cards() {
                                 {projectStartDate}
                             </Text>
                             <Box>
-                                <Heading as="h2" css={{ mb: '$2' }}>
+                                <Heading as="h2" size="1" css={{ mb: '$2' }}>
                                     {projectName}
                                 </Heading>
-                                <IconButton>
-                                    <InfoCircledIcon />
-                                </IconButton>
+
                                 <Badge
                                     size="2"
                                     // size="1"
@@ -80,6 +87,39 @@ function Cards() {
                                 >
                                     {projectStatus}
                                 </Badge>
+
+                                {projectDescription && (
+                                    <Dialog
+                                    // open
+                                    >
+                                        <DialogTrigger asChild>
+                                            <IconButton>
+                                                <InfoCircledIcon />
+                                            </IconButton>
+                                        </DialogTrigger>
+                                        {/* https://www.radix-ui.com/docs/primitives/components/dialog#title */}
+                                        <DialogContent
+                                            aria-label={`Description of the enterprise/project ${projectName}`}
+                                        >
+                                            <Heading as="h2" size="1" css={{ mb: '$3' }}>
+                                                {projectName}
+                                            </Heading>
+                                            <Paragraph>{projectDescription}</Paragraph>
+                                        </DialogContent>
+                                    </Dialog>
+                                )}
+
+                                <Heading as="h3">Location</Heading>
+                                <Text>
+                                    {district} (
+                                    {province === 'Province No. 2' ? (
+                                        <Abbr title="Former Province No. 2">Madhesh Province</Abbr>
+                                    ) : (
+                                        province
+                                    )}
+                                    )
+                                </Text>
+
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
                             </Box>
