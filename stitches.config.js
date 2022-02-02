@@ -34,8 +34,12 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
 
                 hiContrast: '$mauve12',
                 loContrast: 'white',
+
                 transparentPanel: 'hsl(0 0% 0% / 97%)',
-                panel: 'white'
+                panel: 'white',
+
+                shadowLight: 'hsl(206 22% 7% / 35%)',
+                shadowDark: 'hsl(206 22% 7% / 20%)'
             },
             fonts: {
                 // https://github.com/mantinedev/mantine/blob/3.6.3/src/mantine-styles/src/theme/default-theme.ts#L18

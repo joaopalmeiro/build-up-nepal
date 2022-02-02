@@ -16,6 +16,7 @@ function Cards() {
         <Grid columns="2" gapX="1" gapY="2" align="start">
             {dataIndices.map((idx) => {
                 // TODO
+                // console.log(data[idx]);
 
                 const projectName = data[idx].name;
                 const projectStatus = data[idx].status;
