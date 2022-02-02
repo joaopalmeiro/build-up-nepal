@@ -28,7 +28,7 @@ const Card = styled('div', {
     flexShrink: 0,
 
     // Custom
-    backgroundColor: '$panel',
+    // backgroundColor: '$panel',
     display: 'block',
     borderRadius: '$3',
     position: 'relative',
@@ -50,10 +50,17 @@ const Card = styled('div', {
 
     variants: {
         variant: {
+            loContrast: {
+                backgroundColor: '$panel'
+            },
             gray: {
                 backgroundColor: '$mauve2'
             }
         }
+    },
+
+    defaultVariants: {
+        variant: 'loContrast'
     }
 });
 

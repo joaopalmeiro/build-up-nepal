@@ -14,13 +14,14 @@ import Text from './Text';
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1715
+// https://mastery.games/post/grid-item-placement/#Order
 function Cards() {
     const [dataIndices] = useAtom(markersAtom);
     // console.log(dataIndices);
 
     return (
         <Grid columns="2" gapX="1" gapY="2" align="start">
-            {dataIndices.map((idx) => {
+            {dataIndices.map((idx, i) => {
                 // TODO
                 // console.log(data[idx]);
 
@@ -37,17 +38,25 @@ function Cards() {
                 const numberJobs = data[idx].total_jobs;
 
                 return (
-                    <Card key={idx} css={{ p: '$3' }}>
+                    <Card
+                        key={idx}
+                        variant={i === dataIndices.length - 1 ? 'loContrast' : 'gray'}
+                        css={{ p: '$3', order: -i }}
+                    >
                         <Heading as="h2" css={{ mb: '$2' }}>
                             {projectName}
                         </Heading>
                         <IconButton>
                             <InfoCircledIcon />
                         </IconButton>
-                        <Badge size="1" variant="gray">
+                        <Badge
+                            size="2"
+                            // size="1"
+                            variant="gray"
+                        >
                             {projectStatus}
                         </Badge>
-                        <Text css={{ lineHeight: '23px' }}>{numberHouses}</Text>
+                        <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
                         <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
                     </Card>
                 );
