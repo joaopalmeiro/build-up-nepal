@@ -20,6 +20,10 @@ function Header() {
                 take into account that the data shown here corresponds to a snapshot at a given
                 moment in time.
             </Paragraph>
+            <Paragraph css={{ alignSelf: 'start' }}>
+                Since there are a few projects with missing coordinates, don{"'"}t be surprised if
+                you add a new project and it doesn{"'"}t appear on the map below.
+            </Paragraph>
         </>
     );
 }
