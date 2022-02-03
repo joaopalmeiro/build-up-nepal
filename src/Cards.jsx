@@ -149,7 +149,9 @@ function Cards() {
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
 
                                 <Tooltip content="Five-number summary with the value for this project highlighted">
-                                    <Heading as="h3">Bricks produced</Heading>
+                                    <Heading as="h3" css={{ cursor: 'help' }}>
+                                        Bricks produced
+                                    </Heading>
                                 </Tooltip>
                                 <SummaryChart
                                     summaryData={summaryData.bricks}
