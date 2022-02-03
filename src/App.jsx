@@ -1,11 +1,11 @@
-import { DrawingPinIcon } from '@radix-ui/react-icons';
+import { DrawingPinIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 import { useAtomValue, useUpdateAtom } from 'jotai/utils';
 import isEmpty from 'lodash.isempty';
 import sample from 'lodash.sample';
 
 import { globalCss, styled } from '../stitches.config';
 
-import { availableDataAtom, markersAtom } from './atoms';
+import { availableDataAtom, carbonAtom, housesAtom, markersAtom } from './atoms';
 import Box from './Box';
 import Button from './Button';
 import Cards from './Cards';
@@ -19,6 +19,7 @@ import bunUrl from './img/bun_svgo_width_height.svg';
 import vfsgUrl from './img/vfsg.png';
 import NepalMap from './NepalMap';
 import Tooltip from './Tooltip';
+import { generateTwitterShareUrl } from './utils';
 
 // https://vitejs.dev/guide/assets.html#importing-asset-as-url
 // https://vitejs.dev/config/#build-assetsinlinelimit
@@ -76,6 +77,13 @@ function App() {
     const setMarkers = useUpdateAtom(markersAtom);
     const availableData = useAtomValue(availableDataAtom);
 
+    const numberHouses = useAtomValue(housesAtom);
+    const numberCarbon = useAtomValue(carbonAtom);
+
+    // console.log(numberHouses, numberCarbon);
+    // const disableTwitterShareButton = numberHouses === 0 && numberCarbon === 0;
+    // console.log(disableTwitterShareButton);
+
     // console.log(availableData, availableData.length, isEmpty(availableData));
 
     const addMarker = () =>
@@ -108,7 +116,39 @@ function App() {
                             Add
                         </Button>
                     </Tooltip>
+
                     <Counter />
+
+                    {/* https://stackoverflow.com/a/22780197 */}
+                    {/* https://developer.twitter.com/en/docs/twitter-for-websites/web-intents/overview */}
+                    {/* https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview */}
+                    {/* https://publish.twitter.com/ */}
+                    {/* https://developer.twitter.com/en/docs/twitter-for-websites/privacy */}
+                    {/* https://github.com/NickKaramoff/shareon */}
+                    {/* https://github.com/NickKaramoff/toot */}
+                    {/* https://github.com/mastodon/mastodon/issues/442 */}
+                    {/* https://github.com/nygardk/react-share */}
+                    <Button
+                        size="1"
+                        variant="indigo"
+                        ghost
+                        // as={disableTwitterShareButton ? 'button' : 'a'}
+                        as="a"
+                        css={{ cursor: 'pointer' }}
+                        href={generateTwitterShareUrl(numberHouses, numberCarbon)}
+                        target="_blank"
+                        rel="noreferrer"
+                        // disabled={disableTwitterShareButton}
+                    >
+                        <Box
+                            css={{
+                                mr: '$1'
+                            }}
+                        >
+                            <TwitterLogoIcon />
+                        </Box>
+                        Share
+                    </Button>
                 </Flex>
                 <Cards />
                 <Container size="1">

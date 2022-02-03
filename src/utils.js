@@ -1,5 +1,12 @@
 import { format } from 'd3-format';
 
+const TWITTER_SHARE_BASE_URL = 'https://twitter.com/share';
+const TWITTER_SHARE_TEXT_QUERY = 'text=';
+// const TWITTER_SHARE_HASHTAGS_QUERY = 'hashtags=';
+
+// https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal
+// const TWITTER_SHARE_HASHTAGS = 'vizforsocialgood';
+
 // Source:
 // - https://developers.google.com/maps/documentation/urls/get-started
 // - https://stackoverflow.com/a/52943975
@@ -7,3 +14,18 @@ export const getGoogleMapsUrl = (lon, lat) =>
     `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
 
 export const floatFormatter = format('.2f');
+
+export const generateTwitterShareUrl = (numberHouses, numberCarbon) => {
+    // https://stackoverflow.com/a/332897
+
+    // console.log(numberHouses, numberCarbon);
+    const textFirstPart = `Of the projects I checked as part of @BuildupNepal, ${numberHouses} houses were built and ${floatFormatter(
+        numberCarbon
+    )} tons of CO₂ saved!`;
+    const text = encodeURIComponent(`${textFirstPart}`);
+
+    const url = `${TWITTER_SHARE_BASE_URL}?${TWITTER_SHARE_TEXT_QUERY}${text}`;
+
+    // return encodeURI(url);
+    return url;
+};

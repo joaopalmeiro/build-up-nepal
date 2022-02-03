@@ -75,6 +75,23 @@ const Button = styled('button', {
                 '&:focus': {
                     boxShadow: 'inset 0 0 0 1px $colors$mauve8, 0 0 0 1px $colors$mauve8'
                 }
+            },
+            indigo: {
+                backgroundColor: '$indigo2',
+                boxShadow: 'inset 0 0 0 1px $colors$indigo7',
+                color: '$indigo11',
+                '@hover': {
+                    '&:hover': {
+                        boxShadow: 'inset 0 0 0 1px $colors$indigo8'
+                    }
+                },
+                '&:active': {
+                    backgroundColor: '$indigo3',
+                    boxShadow: 'inset 0 0 0 1px $colors$indigo8'
+                },
+                '&:focus': {
+                    boxShadow: 'inset 0 0 0 1px $colors$indigo8, 0 0 0 1px $colors$indigo8'
+                }
             }
         },
 
@@ -92,7 +109,7 @@ const Button = styled('button', {
             ghost: 'true',
             css: {
                 backgroundColor: 'transparent',
-                color: '$hiContrast',
+                // color: '$hiContrast',
                 '@hover': {
                     '&:hover': {
                         backgroundColor: '$mauveA3',
@@ -104,6 +121,25 @@ const Button = styled('button', {
                 },
                 '&:focus': {
                     boxShadow: 'inset 0 0 0 1px $colors$mauveA8, 0 0 0 1px $colors$mauveA8'
+                }
+            }
+        },
+        {
+            variant: 'indigo',
+            ghost: 'true',
+            css: {
+                backgroundColor: 'transparent',
+                '@hover': {
+                    '&:hover': {
+                        backgroundColor: '$indigoA3',
+                        boxShadow: 'none'
+                    }
+                },
+                '&:active': {
+                    backgroundColor: '$indigoA4'
+                },
+                '&:focus': {
+                    boxShadow: 'inset 0 0 0 1px $colors$indigoA8, 0 0 0 1px $colors$indigoA8'
                 }
             }
         }
