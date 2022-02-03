@@ -52,3 +52,8 @@
 - Hooks:
   - [usehooks-ts](https://usehooks-ts.com/) package.
   - [react-hook](https://github.com/jaredLunde/react-hook) packages.
+- [How to draw SVG image on canvas with Konva](https://konvajs.org/docs/sandbox/SVG_On_Canvas.html).
+- [Part 1: Fabric.js on React](https://aprilescobar.medium.com/part-1-fabric-js-on-react-fabric-canvas-e4094e4d0304) blog post by April Escobar.
+- [canvg](https://github.com/canvg/canvg) package.
+- [Ramda](https://ramdajs.com/) package.
+- [Underscore](https://underscorejs.org/) package.

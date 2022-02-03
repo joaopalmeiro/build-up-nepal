@@ -14,6 +14,9 @@ export const getGoogleMapsUrl = (lon, lat) =>
     `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
 
 export const floatFormatter = format('.2f');
+export const siFormatter = format('~s');
+export const siTwoFormatter = format('.2~s');
+export const signedFormatter = format('+');
 
 export const generateTwitterShareUrl = (numberHouses, numberCarbon) => {
     // https://stackoverflow.com/a/332897
@@ -28,4 +31,15 @@ export const generateTwitterShareUrl = (numberHouses, numberCarbon) => {
 
     // return encodeURI(url);
     return url;
+};
+
+export const splitArray = (arr) => {
+    const evenArr = [];
+    const oddArr = [];
+
+    // https://eslint.org/docs/rules/no-plusplus
+    for (let i = 0; i < arr.length; i += 1) {
+        (i % 2 === 0 ? evenArr : oddArr).push(arr[i]);
+    }
+    return [evenArr, oddArr];
 };

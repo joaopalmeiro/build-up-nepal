@@ -13,6 +13,8 @@ import Flex from './Flex';
 import Grid from './Grid';
 import Heading from './Heading';
 import Paragraph from './Paragraph';
+import summaryData from './summary.json';
+import SummaryChart from './SummaryChart';
 import Text from './Text';
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
@@ -31,7 +33,8 @@ function Cards() {
             gapX="1"
             gapY="2"
             // align="start"
-            align="stretch"
+            // align="stretch"
+            align="end"
         >
             {dataIndices.map((idx, i) => {
                 // TODO
@@ -122,6 +125,23 @@ function Cards() {
 
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
+
+                                <Heading as="h3">Bricks produced</Heading>
+                                <SummaryChart
+                                    summaryData={summaryData.bricks}
+                                    datum={numberBricks}
+                                />
+
+                                <Heading as="h3">
+                                    Tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
+                                </Heading>
+                                <SummaryChart
+                                    summaryData={summaryData.carbon}
+                                    datum={numberCarbon}
+                                />
+
+                                <Heading as="h3">Total jobs</Heading>
+                                <SummaryChart summaryData={summaryData.jobs} datum={numberJobs} />
                             </Box>
                         </Flex>
                     </Card>
