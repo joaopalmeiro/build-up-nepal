@@ -1,5 +1,6 @@
 import { InfoCircledIcon } from '@radix-ui/react-icons';
 import useSize from '@react-hook/size';
+import { max } from 'd3-array';
 import { useAtom } from 'jotai';
 import { useRef } from 'react';
 
@@ -20,7 +21,11 @@ import Paragraph from './Paragraph';
 import summaryData from './summary.json';
 import SummaryChart from './SummaryChart';
 import Text from './Text';
+import TinyBars from './TinyBars';
 import Tooltip from './Tooltip';
+
+const maxNumberHouses = max(data, (d) => d.houses_built);
+const maxNumberSchools = max(data, (d) => d.schools);
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
@@ -31,6 +36,7 @@ import Tooltip from './Tooltip';
 function Cards() {
     const [dataIndices] = useAtom(markersAtom);
     // console.log(dataIndices);
+    // console.log(maxNumberHouses, maxNumberSchools);
 
     // https://www.npmjs.com/package/@react-hook/size
     // https://maxschmitt.me/posts/react-refs-loops/
@@ -146,7 +152,22 @@ function Cards() {
                                 </Text>
 
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
+                                {numberHouses && (
+                                    <TinyBars
+                                        value={numberHouses}
+                                        maxValue={maxNumberHouses}
+                                        barWidth={parseFloat(theme.sizes[4].value)}
+                                    />
+                                )}
+
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
+                                {numberSchools && (
+                                    <TinyBars
+                                        value={numberSchools}
+                                        maxValue={maxNumberSchools}
+                                        barWidth={parseFloat(theme.sizes[6].value)}
+                                    />
+                                )}
 
                                 <Tooltip content="Five-number summary with the value for this project highlighted">
                                     <Heading as="h3" css={{ cursor: 'help' }}>
