@@ -7,6 +7,7 @@ specifiers:
   '@radix-ui/react-dialog': ^0.1.5
   '@radix-ui/react-icons': ^1.0.3
   '@radix-ui/react-tooltip': ^0.1.6
+  '@react-hook/size': ^2.1.2
   '@stitches/react': ^1.2.6
   '@visx/axis': ^2.6.0
   '@vitejs/plugin-react': ^1.0.7
@@ -42,6 +43,7 @@ dependencies:
   '@radix-ui/react-dialog': 0.1.5_react-dom@17.0.2+react@17.0.2
   '@radix-ui/react-icons': 1.0.3_react@17.0.2
   '@radix-ui/react-tooltip': 0.1.6_react-dom@17.0.2+react@17.0.2
+  '@react-hook/size': 2.1.2_react@17.0.2
   '@stitches/react': 1.2.6_react@17.0.2
   '@visx/axis': 2.6.0_react@17.0.2
   d3-array: 3.1.1
@@ -390,6 +392,10 @@ packages:
     dependencies:
       prettier: 2.5.1
     dev: true
+
+  /@juggle/resize-observer/3.3.1:
+    resolution: {integrity: sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==}
+    dev: false
 
   /@modulz/design-system/0.6.2_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-mP5Xc4m/F6N8jutWYS9YIJ5T3IKeSDlsyzM0l2yZTNKJTpy6xi6fRpLHWfqzcb6j2f2KbfCIWNKCFWQflBlu5w==}
@@ -1245,6 +1251,45 @@ packages:
       '@babel/runtime': 7.16.7
     dev: false
 
+  /@react-hook/latest/1.0.3_react@17.0.2:
+    resolution: {integrity: sha512-dy6duzl+JnAZcDbNTfmaP3xHiKtbXYOaz3G51MGVljh548Y8MWzTr+PHLOfvpypEVW9zwvl+VyKjbWKEVbV1Rg==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      react: 17.0.2
+    dev: false
+
+  /@react-hook/passive-layout-effect/1.2.1_react@17.0.2:
+    resolution: {integrity: sha512-IwEphTD75liO8g+6taS+4oqz+nnroocNfWVHWz7j+N+ZO2vYrc6PV1q7GQhuahL0IOR7JccFTsFKQ/mb6iZWAg==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      react: 17.0.2
+    dev: false
+
+  /@react-hook/resize-observer/1.2.5_react@17.0.2:
+    resolution: {integrity: sha512-qa0pPvRxq5VbdI8mMK2apPFsZOckhQ6D3Jc9yLuyHMNhui8yEih4qyFCZBDzzK3ymZS6LAltVSVg3l1Dg9vA0w==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@juggle/resize-observer': 3.3.1
+      '@react-hook/latest': 1.0.3_react@17.0.2
+      '@react-hook/passive-layout-effect': 1.2.1_react@17.0.2
+      '@types/raf-schd': 4.0.1
+      raf-schd: 4.0.3
+      react: 17.0.2
+    dev: false
+
+  /@react-hook/size/2.1.2_react@17.0.2:
+    resolution: {integrity: sha512-BmE5asyRDxSuQ9p14FUKJ0iBRgV9cROjqNG9jT/EjCM+xHha1HVqbPoT+14FQg1K7xIydabClCibUY4+1tw/iw==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@react-hook/passive-layout-effect': 1.2.1_react@17.0.2
+      '@react-hook/resize-observer': 1.2.5_react@17.0.2
+      react: 17.0.2
+    dev: false
+
   /@rollup/pluginutils/4.1.2:
     resolution: {integrity: sha512-ROn4qvkxP9SyPeHaf7uQC/GPFY6L/OWy9+bd9AwcjOAWQwxRscoEyAUD8qCY5o5iL4jqQwoLk2kaTKJPb/HwzQ==}
     engines: {node: '>= 8.0.0'}
@@ -1301,6 +1346,10 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
+    dev: false
+
+  /@types/raf-schd/4.0.1:
+    resolution: {integrity: sha512-Ha+EnKHFIh9EKW0/XZJPUd3EGDFisEvauaBd4VVCRPKeOqUxNEc9TodiY2Zhk33XCgzJucoFEcaoNcBAPHTQ2A==}
     dev: false
 
   /@types/react/17.0.38:
@@ -2937,6 +2986,10 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
     dev: true
+
+  /raf-schd/4.0.3:
+    resolution: {integrity: sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==}
+    dev: false
 
   /react-dom/17.0.2_react@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}

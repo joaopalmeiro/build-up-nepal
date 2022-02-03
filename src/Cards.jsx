@@ -1,5 +1,9 @@
 import { InfoCircledIcon } from '@radix-ui/react-icons';
+import useSize from '@react-hook/size';
 import { useAtom } from 'jotai';
+import { useRef } from 'react';
+
+import { theme } from '../stitches.config';
 
 import { markersAtom } from './atoms';
 import Box from './Box';
@@ -16,6 +20,7 @@ import Paragraph from './Paragraph';
 import summaryData from './summary.json';
 import SummaryChart from './SummaryChart';
 import Text from './Text';
+import Tooltip from './Tooltip';
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
@@ -27,6 +32,22 @@ function Cards() {
     const [dataIndices] = useAtom(markersAtom);
     // console.log(dataIndices);
 
+    // https://www.npmjs.com/package/@react-hook/size
+    // https://maxschmitt.me/posts/react-refs-loops/
+    const target = useRef(null);
+    const [width] = useSize(target);
+
+    // console.log(theme);
+
+    const paddingSize = parseFloat(theme.space[3].value) * 2;
+    const leftDateSize = parseFloat(theme.fontSizes[2].value);
+    const gapSize = parseFloat(theme.space[3].value);
+    const gridGapSize = parseFloat(theme.space[1].value);
+    const extraLeftPaddingSize = leftDateSize + gapSize;
+    const halfWidth = width / 2;
+    const chartWidth = width ? halfWidth - gridGapSize - paddingSize - extraLeftPaddingSize : 0;
+    // console.log(width, paddingSize, chartWidth);
+
     return (
         <Grid
             columns="2"
@@ -35,6 +56,7 @@ function Cards() {
             // align="start"
             // align="stretch"
             align="end"
+            ref={target}
         >
             {dataIndices.map((idx, i) => {
                 // TODO
@@ -64,7 +86,7 @@ function Cards() {
                         variant={i === dataIndices.length - 1 ? 'loContrast' : 'gray'}
                         css={{ p: '$3', order: -i }}
                     >
-                        <Flex gap="3">
+                        <Flex gap="3" justify="center">
                             <Text
                                 variant="gray"
                                 size="2"
@@ -126,10 +148,14 @@ function Cards() {
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
 
-                                <Heading as="h3">Bricks produced</Heading>
+                                <Tooltip content="Five-number summary with the value for this project highlighted">
+                                    <Heading as="h3">Bricks produced</Heading>
+                                </Tooltip>
                                 <SummaryChart
                                     summaryData={summaryData.bricks}
                                     datum={numberBricks}
+                                    width={chartWidth}
+                                    padding={extraLeftPaddingSize / 2}
                                 />
 
                                 <Heading as="h3">
@@ -138,10 +164,17 @@ function Cards() {
                                 <SummaryChart
                                     summaryData={summaryData.carbon}
                                     datum={numberCarbon}
+                                    width={chartWidth}
+                                    padding={extraLeftPaddingSize / 2}
                                 />
 
                                 <Heading as="h3">Total jobs</Heading>
-                                <SummaryChart summaryData={summaryData.jobs} datum={numberJobs} />
+                                <SummaryChart
+                                    summaryData={summaryData.jobs}
+                                    datum={numberJobs}
+                                    width={chartWidth}
+                                    padding={extraLeftPaddingSize / 2}
+                                />
                             </Box>
                         </Flex>
                     </Card>

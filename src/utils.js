@@ -43,3 +43,36 @@ export const splitArray = (arr) => {
     }
     return [evenArr, oddArr];
 };
+
+// Source:
+// - https://github.com/airbnb/visx/blob/v2.5.0/packages/visx-text/src/util/getStringWidth.ts
+const MEASUREMENT_ELEMENT_ID = '__react_canvas_measurement_id';
+
+export const getFontStyleHeight = (text, style) => {
+    try {
+        let canvasEl = document.getElementById(MEASUREMENT_ELEMENT_ID);
+
+        if (!canvasEl) {
+            canvasEl = document.createElement('canvas');
+
+            canvasEl.hidden = true;
+            canvasEl.setAttribute('id', MEASUREMENT_ELEMENT_ID);
+
+            document.body.appendChild(canvasEl);
+        }
+
+        const ctx = canvasEl.getContext('2d');
+
+        ctx.font = style;
+
+        const textMetrics = ctx.measureText(text);
+
+        // It works on Google Chrome and Firefox.
+        const actualHeight =
+            textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent;
+
+        return actualHeight;
+    } catch (e) {
+        return null;
+    }
+};
