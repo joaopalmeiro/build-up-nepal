@@ -110,3 +110,4 @@ dist
 # Custom
 data/formatter.py
 src/data_old.json
+formatter.jsx

@@ -1,6 +1,8 @@
-# build-up-nepal
+# build it up, Nepal! 🧱
 
 > [Project](https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal)
+
+Powered by Build up Nepal and Viz for Social Good.
 
 ## Development
 
@@ -63,4 +65,4 @@
 - [@pmndrs/branding](https://github.com/pmndrs/branding) package.
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) documentation. [Horizontal tiles](https://codesandbox.io/s/horizontal-tiles-l4klb) example.
 - [React Helmet](https://github.com/nfl/react-helmet).
-- [Microlink Cards](https://cards.microlink.io/editor).
+- [Microlink Cards](https://cards.microlink.io/editor) and [@microlink/cards](https://github.com/microlinkhq/cards/tree/master/packages/npm) package. [Custom template](https://cards.microlink.io/editor?preset=simple&p=2gTEPD4KICAgIDxCb3gKICAgICAgICBzeD17ewogICAgICAgICAgICBiYWNrZ3JvdW5kOiAnbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LCBoc2woMjI2LCA1NS4wJSwgNDUuMCUpLCBoc2woMzU4LCA2NS4wJSwgNDguNyUpKScsCiAgICAgICAgICAgIHBhZGRpbmc6ICcxMHB4JwogICAgICAgIH19CiAgICA-CiAgICAgICAgPEZsZXgKICAgICAgICAgICAgc3g9e3sKICAgICAgICAgICAgICAgIGFsaWduSXRlbXM6ICdjZW50ZXInLAogICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLAogICAgICAgICAgICAgICAgZmxleERpcmVjdGlvbjogJ2NvbHVtbicsCiAgICAgICAgICAgICAgICBiZzogcXVlcnkuYmcsCiAgICAgICAgICAgICAgICBjb2xvcjogcXVlcnkuY29sb3IsCiAgICAgICAgICAgICAgICBoZWlnaHQ6ICcxMDAlJwogICAgICAgICAgICB9fQogICAgICAgID4KICAgICAgICAgICAgPFRleHQKICAgICAgICAgICAgICAgIHN4PXt7CiAgICAgICAgICAgICAgICAgICAgZm9udEZhbWlseToKICAgICAgICAgICAgICAgICAgICAgICAgJy1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgU2Vnb2UgVUksIFJvYm90bywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZiwgQXBwbGUgQ29sb3IgRW1vamksIFNlZ29lIFVJIEVtb2ppJywKICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogNiwKICAgICAgICAgICAgICAgICAgICBmb250V2VpZ2h0OiA3MDAKICAgICAgICAgICAgICAgIH19CiAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtxdWVyeS5oZWFkbGluZX0KICAgICAgICAgICAgPC9UZXh0PgogICAgICAgICAgICA8VGV4dAogICAgICAgICAgICAgICAgc3g9e3sKICAgICAgICAgICAgICAgICAgICBmb250RmFtaWx5OgogICAgICAgICAgICAgICAgICAgICAgICAnLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCBTZWdvZSBVSSwgUm9ib3RvLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmLCBBcHBsZSBDb2xvciBFbW9qaSwgU2Vnb2UgVUkgRW1vamknLAogICAgICAgICAgICAgICAgICAgIGZvbnRTaXplOiAzLAogICAgICAgICAgICAgICAgICAgIGZvbnRXZWlnaHQ6IDMwMAogICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgICAge3F1ZXJ5LmNhcHRpb259CiAgICAgICAgICAgIDwvVGV4dD4KICAgICAgICA8L0ZsZXg-CiAgICA8L0JveD4KPC8-Owo&caption=Powered+by+Build+up+Nepal+and+Viz+for+Social+Good&headline=build+it+up%2C+Nepal%21+%F0%9F%A7%B1&bg=hsl%28260%2C+25.0%25%2C+11.0%25%29#) ([Adobe preset](https://cards.microlink.io/editor?preset=adobe) + [Simple preset](https://cards.microlink.io/editor?preset=simple)).
