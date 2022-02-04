@@ -111,3 +111,5 @@ dist
 data/formatter.py
 src/data_old.json
 formatter.jsx
+data/teste.svg
+data/raw/minimaps/*.svg

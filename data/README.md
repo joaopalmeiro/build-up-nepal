@@ -14,3 +14,4 @@
 - `pipenv install 'python-fx==0.1.0b2.post1'`.
 - [jsondiff](https://github.com/xlwings/jsondiff) package. `pipenv install jsondiff`.
 - [List of districts of Nepal](https://en.wikipedia.org/wiki/List_of_districts_of_Nepal).
+- `pipenv run usort format formatter.py`.
