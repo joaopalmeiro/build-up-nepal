@@ -57,3 +57,10 @@
 - [canvg](https://github.com/canvg/canvg) package.
 - [Ramda](https://ramdajs.com/) package.
 - [Underscore](https://underscorejs.org/) package.
+- [Grid.js](https://gridjs.io/) and [gridjs-react](https://github.com/grid-js/gridjs-react) package (tables).
+- [supabase-py](https://github.com/supabase-community/supabase-py) package.
+- [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) app.
+- [@pmndrs/branding](https://github.com/pmndrs/branding) package.
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) documentation. [Horizontal tiles](https://codesandbox.io/s/horizontal-tiles-l4klb) example.
+- [React Helmet](https://github.com/nfl/react-helmet).
+- [Microlink Cards](https://cards.microlink.io/editor).

@@ -30,6 +30,7 @@ specifiers:
   lodash.range: ^3.2.0
   lodash.sample: ^4.2.1
   lodash.sumby: ^4.6.0
+  pluralize: ^8.0.0
   prettier: ^2.5.1
   prop-types: ^15.8.1
   react: ^17.0.2
@@ -58,6 +59,7 @@ dependencies:
   lodash.range: 3.2.0
   lodash.sample: 4.2.1
   lodash.sumby: 4.6.0
+  pluralize: 8.0.0
   prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -2947,6 +2949,11 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pluralize/8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
+    dev: false
 
   /postcss/8.4.5:
     resolution: {integrity: sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==}

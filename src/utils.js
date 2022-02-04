@@ -1,11 +1,16 @@
 import { format } from 'd3-format';
+import pluralize from 'pluralize';
 
+import data from './data.json';
+
+const NUMBER_PROJECTS = data.length;
 const TWITTER_SHARE_BASE_URL = 'https://twitter.com/share';
 const TWITTER_SHARE_TEXT_QUERY = 'text=';
 // const TWITTER_SHARE_HASHTAGS_QUERY = 'hashtags=';
+const WEBSITE_URL = 'https://tools-dvs-soti-2021.vercel.app/'; // TODO
 
 // https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal
-// const TWITTER_SHARE_HASHTAGS = 'vizforsocialgood';
+const TWITTER_SHARE_HASHTAGS = 'vizforsocialgood';
 
 // Source:
 // - https://developers.google.com/maps/documentation/urls/get-started
@@ -20,14 +25,22 @@ export const signedFormatter = format('+');
 
 export const generateTwitterShareUrl = (numberHouses, numberCarbon) => {
     // https://stackoverflow.com/a/332897
+    // console.log(numberHouses, numberCarbon, NUMBER_PROJECTS);
 
-    // console.log(numberHouses, numberCarbon);
-    const textFirstPart = `Of the projects I checked as part of @BuildupNepal, ${numberHouses} houses were built and ${floatFormatter(
+    const textFirstPart = `Of the projects I checked as part of @BuildupNepal, ${numberHouses} ${pluralize(
+        'house',
+        numberHouses
+    )} 🏘️ ${pluralize('was', numberHouses)} built and ${floatFormatter(numberCarbon)} ${pluralize(
+        'ton',
         numberCarbon
-    )} tons of CO₂ saved!`;
-    const text = encodeURIComponent(`${textFirstPart}`);
+    )} of CO₂ 🔥 ${pluralize('was', numberCarbon)} saved!`;
+    const textSecondPart = `Go to ${WEBSITE_URL} and check out some of the ${NUMBER_PROJECTS} projects in Nepal yourself.`;
 
-    const url = `${TWITTER_SHARE_BASE_URL}?${TWITTER_SHARE_TEXT_QUERY}${text}`;
+    const text = encodeURIComponent(`${textFirstPart}\n\n${textSecondPart}`);
+
+    const footer = encodeURIComponent(`\n\n@VizFSG #${TWITTER_SHARE_HASHTAGS}`);
+
+    const url = `${TWITTER_SHARE_BASE_URL}?${TWITTER_SHARE_TEXT_QUERY}${text}${footer}`;
 
     // return encodeURI(url);
     return url;
