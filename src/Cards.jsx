@@ -27,6 +27,14 @@ import Tooltip from './Tooltip';
 const maxNumberHouses = max(data, (d) => d.houses_built);
 const maxNumberSchools = max(data, (d) => d.schools);
 
+const runningStates = [
+    'Running',
+    'Struggling',
+    'Recently started',
+    'Project, Running',
+    'Running, Struggling'
+];
+
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
