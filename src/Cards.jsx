@@ -80,6 +80,7 @@ function Cards() {
                 const projectStatus = data[idx].status;
                 const projectStartDate = data[idx].start_date_name;
                 const projectDescription = data[idx].description;
+                const projectType = data[idx].type;
 
                 // https://en.wikipedia.org/wiki/Nepal#Administrative_divisions
                 // Province (7) > District (77)
@@ -127,26 +128,33 @@ function Cards() {
                                     {projectStatus}
                                 </Badge>
 
-                                {projectDescription && (
-                                    <Dialog
-                                    // open
+                                <Dialog
+                                // open
+                                >
+                                    <DialogTrigger asChild>
+                                        <IconButton>
+                                            <InfoCircledIcon />
+                                        </IconButton>
+                                    </DialogTrigger>
+                                    {/* https://www.radix-ui.com/docs/primitives/components/dialog#title */}
+                                    <DialogContent
+                                        aria-label={`Description of the enterprise/project ${projectName}`}
                                     >
-                                        <DialogTrigger asChild>
-                                            <IconButton>
-                                                <InfoCircledIcon />
-                                            </IconButton>
-                                        </DialogTrigger>
-                                        {/* https://www.radix-ui.com/docs/primitives/components/dialog#title */}
-                                        <DialogContent
-                                            aria-label={`Description of the enterprise/project ${projectName}`}
+                                        <Heading as="h2" size="1" css={{ mb: '$3' }}>
+                                            {projectName}
+                                        </Heading>
+                                        <Badge size="2" variant="gray">
+                                            {projectType}
+                                        </Badge>
+                                        <Paragraph
+                                            variant={projectDescription ? 'contrast' : 'gray'}
                                         >
-                                            <Heading as="h2" size="1" css={{ mb: '$3' }}>
-                                                {projectName}
-                                            </Heading>
-                                            <Paragraph>{projectDescription}</Paragraph>
-                                        </DialogContent>
-                                    </Dialog>
-                                )}
+                                            {projectDescription
+                                                ? projectDescription
+                                                : 'No further description available.'}
+                                        </Paragraph>
+                                    </DialogContent>
+                                </Dialog>
 
                                 <Heading as="h3">Location</Heading>
                                 <Text>
