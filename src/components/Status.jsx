@@ -32,6 +32,9 @@ const Status = styled('div', {
             },
             red: {
                 backgroundColor: '$red9'
+            },
+            gold: {
+                backgroundColor: '$gold9'
             }
         }
     },

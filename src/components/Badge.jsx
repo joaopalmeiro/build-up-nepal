@@ -78,6 +78,13 @@ const Badge = styled('span', {
                 '&:focus': {
                     boxShadow: 'inset 0 0 0 1px $colors$red8, 0 0 0 1px $colors$red8'
                 }
+            },
+            gold: {
+                backgroundColor: '$gold3',
+                color: '$gold11',
+                '&:focus': {
+                    boxShadow: 'inset 0 0 0 1px $colors$gold8, 0 0 0 1px $colors$gold8'
+                }
             }
         }
     },

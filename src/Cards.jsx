@@ -13,6 +13,7 @@ import Abbr from './components/Abbr';
 import Badge from './components/Badge';
 import { Dialog, DialogContent, DialogTrigger } from './components/Dialog';
 import IconButton from './components/IconButton';
+import Status from './components/Status';
 import data from './data.json';
 import Flex from './Flex';
 import Grid from './Grid';
@@ -27,13 +28,9 @@ import Tooltip from './Tooltip';
 const maxNumberHouses = max(data, (d) => d.houses_built);
 const maxNumberSchools = max(data, (d) => d.schools);
 
-const runningStates = [
-    'Running',
-    'Struggling',
-    'Recently started',
-    'Project, Running',
-    'Running, Struggling'
-];
+const strugglingStates = ['Struggling', 'Running, Struggling'];
+
+const runningStates = ['Running', 'Recently started', 'Project, Running', ...strugglingStates];
 
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1546
 // https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1666
@@ -120,11 +117,28 @@ function Cards() {
                                     {projectName}
                                 </Heading>
 
+                                {/* https://design-system.modulz-deploys.com/#badge */}
+                                {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1017 */}
                                 <Badge
                                     size="2"
                                     // size="1"
-                                    variant="gray"
+                                    variant="gold"
                                 >
+                                    {runningStates.includes(projectStatus) && (
+                                        <Box css={{ mr: '$1' }}>
+                                            <Status
+                                                size="1"
+                                                variant="gold"
+                                                css={{
+                                                    borderRadius: strugglingStates.includes(
+                                                        projectStatus
+                                                    )
+                                                        ? 'unset'
+                                                        : '$round'
+                                                }}
+                                            />
+                                        </Box>
+                                    )}
                                     {projectStatus}
                                 </Badge>
 
@@ -143,7 +157,11 @@ function Cards() {
                                         <Heading as="h2" size="1" css={{ mb: '$3' }}>
                                             {projectName}
                                         </Heading>
-                                        <Badge size="2" variant="gray">
+                                        <Badge
+                                            size="2"
+                                            // variant="gray"
+                                            variant="gold"
+                                        >
                                             {projectType}
                                         </Badge>
                                         <Paragraph
