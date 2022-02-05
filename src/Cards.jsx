@@ -115,12 +115,8 @@ function Cards() {
                                 {projectStartDate}
                             </Text>
 
-                            <Flex direction="column">
-                                <Heading
-                                    as="h2"
-                                    size="1"
-                                    // css={{ mb: '$2' }}
-                                >
+                            <Flex direction="column" gap="3">
+                                <Heading as="h2" size="1" css={{ mb: '$1' }}>
                                     {projectName}
                                 </Heading>
 
@@ -165,118 +161,167 @@ function Cards() {
                                             <Heading as="h2" size="1" css={{ mb: '$3' }}>
                                                 {projectName}
                                             </Heading>
-                                            <Badge
-                                                size="2"
-                                                // variant="gray"
-                                                variant="gold"
-                                            >
-                                                {projectType}
-                                            </Badge>
-                                            <Paragraph
-                                                variant={projectDescription ? 'contrast' : 'gray'}
-                                            >
-                                                {projectDescription
-                                                    ? projectDescription
-                                                    : 'No further description available for this enterprise/project.'}
-                                            </Paragraph>
+                                            <Flex direction="column" gap="2" align="start">
+                                                <Badge
+                                                    size="2"
+                                                    // variant="gray"
+                                                    variant="gold"
+                                                >
+                                                    {projectType}
+                                                </Badge>
+                                                <Paragraph
+                                                    variant={
+                                                        projectDescription ? 'contrast' : 'gray'
+                                                    }
+                                                >
+                                                    {projectDescription
+                                                        ? projectDescription
+                                                        : 'No further description available for this enterprise/project.'}
+                                                </Paragraph>
+                                            </Flex>
                                         </DialogContent>
                                     </Dialog>
                                 </Flex>
 
-                                <Heading as="h3">Location</Heading>
-                                {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L511 */}
-                                <Text as="p" css={{ lineHeight: '23px' }}>
-                                    {district}{' '}
-                                    <Text variant="gray" css={{ display: 'unset' }}>
-                                        (
-                                        {province === 'Province No. 2' ? (
-                                            <Abbr title="Former Province No. 2">
-                                                Madhesh Province
-                                            </Abbr>
-                                        ) : (
-                                            province
-                                        )}
-                                        )
+                                <Flex direction="column" gap="1">
+                                    <Box>
+                                        <Heading as="h3">Location</Heading>
+                                        {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L511 */}
+                                        <Text as="p" css={{ lineHeight: '23px' }}>
+                                            {district}{' '}
+                                            <Text variant="gray" css={{ display: 'unset' }}>
+                                                (
+                                                {province === 'Province No. 2' ? (
+                                                    <Abbr title="Former Province No. 2">
+                                                        Madhesh Province
+                                                    </Abbr>
+                                                ) : (
+                                                    province
+                                                )}
+                                                )
+                                            </Text>
+                                        </Text>
+                                    </Box>
+
+                                    <Image
+                                        src={districtMinimap[district]}
+                                        alt={`${province} map silhouette with ${district} district highlighted.`}
+                                        css={{
+                                            width: chartWidth / 1.5,
+                                            height: chartWidth / 1.5,
+                                            alignSelf: 'center',
+                                            transform: `translate(-${extraLeftPaddingSize / 2}px)`
+                                        }}
+                                    />
+                                </Flex>
+
+                                <Flex direction="column" gap="1">
+                                    {/* https://en.wikipedia.org/wiki/Numero_sign */}
+                                    <Heading as="h3">No. houses and schools built</Heading>
+                                    <Flex justify="center" gap="7">
+                                        <Flex align="center" gap="2">
+                                            <TinyBars
+                                                value={numberHouses}
+                                                maxValue={maxNumberHouses}
+                                                barWidth={parseFloat(theme.sizes[4].value)}
+                                            />
+                                            <Text
+                                                size="4"
+                                                css={{
+                                                    lineHeight: 1.5,
+                                                    fontWeight: numberHouses ? '$2' : '$1'
+                                                }}
+                                            >
+                                                {numberHouses ?? 'N/A'}
+                                            </Text>
+                                        </Flex>
+
+                                        <Flex align="center" gap="2">
+                                            <TinyBars
+                                                value={numberSchools}
+                                                maxValue={maxNumberSchools}
+                                                barWidth={parseFloat(theme.sizes[6].value)}
+                                            />
+                                            <Text
+                                                size="4"
+                                                css={{
+                                                    lineHeight: 1.5,
+                                                    fontWeight: numberSchools ? '$2' : '$1'
+                                                }}
+                                            >
+                                                {numberSchools ?? 'N/A'}
+                                            </Text>
+                                        </Flex>
+                                    </Flex>
+                                </Flex>
+
+                                <Flex direction="column" gap="2">
+                                    <Tooltip content="Five-number summary with the value for this project highlighted">
+                                        <Heading as="h3" css={{ cursor: 'help' }}>
+                                            Bricks produced
+                                        </Heading>
+                                    </Tooltip>
+                                    <SummaryChart
+                                        summaryData={summaryData.bricks}
+                                        datum={numberBricks}
+                                        width={chartWidth}
+                                        padding={extraLeftPaddingSize / 2}
+                                    />
+                                    <Text
+                                        size="2"
+                                        as="p"
+                                        css={{
+                                            ta: 'right',
+                                            //  lineHeight: 1.5
+                                            lineHeight: 1
+                                        }}
+                                    >
+                                        {siTwoFormatter(summaryData.bricks[1])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (1st Qu.)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.bricks[2])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (Median)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.bricks[3])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (3rd Qu.)
+                                        </Text>
                                     </Text>
-                                </Text>
+                                </Flex>
 
-                                <Image
-                                    src={districtMinimap[district]}
-                                    alt={`${province} map silhouette with ${district} district highlighted.`}
-                                    css={{
-                                        width: chartWidth / 1.5,
-                                        height: chartWidth / 1.5,
-                                        alignSelf: 'center'
-                                    }}
-                                />
-
-                                <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
-                                <TinyBars
-                                    value={numberHouses}
-                                    maxValue={maxNumberHouses}
-                                    barWidth={parseFloat(theme.sizes[4].value)}
-                                />
-
-                                <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
-                                <TinyBars
-                                    value={numberSchools}
-                                    maxValue={maxNumberSchools}
-                                    barWidth={parseFloat(theme.sizes[6].value)}
-                                />
-
-                                <Tooltip content="Five-number summary with the value for this project highlighted">
-                                    <Heading as="h3" css={{ cursor: 'help' }}>
-                                        Bricks produced
+                                <Flex direction="column" gap="2">
+                                    <Heading as="h3">
+                                        Tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
                                     </Heading>
-                                </Tooltip>
-                                <SummaryChart
-                                    summaryData={summaryData.bricks}
-                                    datum={numberBricks}
-                                    width={chartWidth}
-                                    padding={extraLeftPaddingSize / 2}
-                                />
-                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
-                                    {siTwoFormatter(summaryData.bricks[1])}{' '}
-                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
-                                        (1st Qu.)
+                                    <SummaryChart
+                                        summaryData={summaryData.carbon}
+                                        datum={numberCarbon}
+                                        width={chartWidth}
+                                        padding={extraLeftPaddingSize / 2}
+                                    />
+                                    <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
+                                        {siTwoFormatter(summaryData.carbon[1])},{' '}
+                                        {siTwoFormatter(summaryData.carbon[2])},{' '}
+                                        {siTwoFormatter(summaryData.carbon[3])}
                                     </Text>
-                                    , {siTwoFormatter(summaryData.bricks[2])}{' '}
-                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
-                                        (Median)
-                                    </Text>
-                                    , {siTwoFormatter(summaryData.bricks[3])}{' '}
-                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
-                                        (3rd Qu.)
-                                    </Text>
-                                </Text>
+                                </Flex>
 
-                                <Heading as="h3">
-                                    Tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
-                                </Heading>
-                                <SummaryChart
-                                    summaryData={summaryData.carbon}
-                                    datum={numberCarbon}
-                                    width={chartWidth}
-                                    padding={extraLeftPaddingSize / 2}
-                                />
-                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
-                                    {siTwoFormatter(summaryData.carbon[1])},{' '}
-                                    {siTwoFormatter(summaryData.carbon[2])},{' '}
-                                    {siTwoFormatter(summaryData.carbon[3])}
-                                </Text>
-
-                                <Heading as="h3">Total jobs</Heading>
-                                <SummaryChart
-                                    summaryData={summaryData.jobs}
-                                    datum={numberJobs}
-                                    width={chartWidth}
-                                    padding={extraLeftPaddingSize / 2}
-                                />
-                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
-                                    {siTwoFormatter(summaryData.jobs[1])},{' '}
-                                    {siTwoFormatter(summaryData.jobs[2])},{' '}
-                                    {siTwoFormatter(summaryData.jobs[3])}
-                                </Text>
+                                <Flex direction="column" gap="2">
+                                    <Heading as="h3">Total jobs</Heading>
+                                    <SummaryChart
+                                        summaryData={summaryData.jobs}
+                                        datum={numberJobs}
+                                        width={chartWidth}
+                                        padding={extraLeftPaddingSize / 2}
+                                    />
+                                    <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
+                                        {siTwoFormatter(summaryData.jobs[1])},{' '}
+                                        {siTwoFormatter(summaryData.jobs[2])},{' '}
+                                        {siTwoFormatter(summaryData.jobs[3])}
+                                    </Text>
+                                </Flex>
                             </Flex>
                         </Flex>
                     </Card>
