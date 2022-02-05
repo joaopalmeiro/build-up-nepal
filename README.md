@@ -2,7 +2,7 @@
 
 > [Project](https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal)
 
-Powered by Build up Nepal and Viz for Social Good.
+Powered by Build up Nepal and Viz for Social Good. Check it [here](https://build-it-up-nepal.vercel.app/).
 
 ## Development
 
@@ -19,6 +19,7 @@ Powered by Build up Nepal and Viz for Social Good.
 - [Five-number summary](https://en.wikipedia.org/wiki/Five-number_summary) Wikipedia page.
 - [Flag of Nepal](https://commons.wikimedia.org/wiki/File:Flag_of_Nepal.svg) and [Flag of Nepal](https://en.wikipedia.org/wiki/Flag_of_Nepal) Wikipedia page.
 - [devtools.fm: Pedro Duarte - Modulz, Radix, Stitches](https://devtools.fm/episode/17).
+- [Pedro Duarte's website](https://ped.ro/).
 
 ## Notes
 

@@ -100,7 +100,7 @@ function App() {
         <>
             {/* Rendered: {++useRef(0).current} */}
             <Container size="2">
-                <Flex direction="column" gap="1" align="center">
+                <Flex direction="column" gap="2" align="center">
                     <Header />
                     <NepalMap />
                     <Tooltip content="Click to check a new enterprise/project">
