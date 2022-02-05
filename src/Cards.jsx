@@ -178,7 +178,7 @@ function Cards() {
 
                                 <Heading as="h3">Location</Heading>
                                 {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L511 */}
-                                <Text as="p">
+                                <Text as="p" css={{ lineHeight: '23px' }}>
                                     {district}{' '}
                                     <Text variant="gray" css={{ display: 'unset' }}>
                                         (
