@@ -19,8 +19,8 @@ const tickLabelProps = {
     ...bottomTickLabelProps(),
     fontFamily: theme.fonts.sans.value,
     fontSize: theme.fontSizes[1].value,
-    // fill: theme.colors.hiContrast.value
-    fill: theme.colors.mauve11.value
+    fill: theme.colors.hiContrast.value
+    // fill: theme.colors.mauve11.value
 };
 
 const textLabelProps = {
@@ -61,12 +61,19 @@ function SummaryChart({ summaryData, datum, width, padding }) {
         parseFloat(textLabelProps.dy) * parseFloat(textLabelProps.fontSize)
     );
 
+    // const summaryLabelHeight = max([
+    //     getFontStyleHeight('Min.', `${tickLabelProps.fontSize} ${tickLabelProps.fontFamily}`),
+    //     getFontStyleHeight('Max.', `${tickLabelProps.fontSize} ${tickLabelProps.fontFamily}`)
+    // ]);
+    const summaryLabelHeight = parseFloat(tickLabelProps.fontSize); // 1em
+    // console.log(summaryLabelHeight);
+
     const bottomAxisHeight = tickLabelHeight + tickLabelSpacing + tickLength + domainLineWidth;
     const topAxisHeight = tickLength + domainLineWidth;
     const labelHeight = valueLabelHeight + valueLabelSpacing;
     const paddingY = topAxisHeight * 2 + labelHeight;
 
-    const chartHeight = bottomAxisHeight + paddingY;
+    const chartHeight = bottomAxisHeight + paddingY + summaryLabelHeight;
 
     // console.log(tickLabelSpacing, tickLabelHeight, chartHeight);
 
@@ -93,11 +100,31 @@ function SummaryChart({ summaryData, datum, width, padding }) {
                 top={paddingY}
                 tickLength={tickLength}
                 tickFormat={siTwoFormatter}
-                tickComponent={({ formattedValue, ...tickProps }) =>
-                    formattedValue !== siTwoFormatter(summaryData[2]) && (
-                        <text {...tickProps}>{formattedValue}</text>
-                    )
-                }
+                tickComponent={({ formattedValue, ...tickProps }) => {
+                    const summaryLabel =
+                        formattedValue === siTwoFormatter(summaryData[0]) ? 'Min.' : 'Max.';
+                    const anchor =
+                        formattedValue === siTwoFormatter(summaryData[0]) ? 'start' : 'end';
+
+                    return (
+                        formattedValue !== siTwoFormatter(summaryData[2]) && (
+                            <text {...tickProps}>
+                                {formattedValue}{' '}
+                                <tspan
+                                    x={tickProps.x}
+                                    // dy={tickProps.y}
+                                    dy="1em"
+                                    // fill={theme.colors.hiContrast.value}
+                                    fill={theme.colors.mauve11.value}
+                                    // textAnchor="middle"
+                                    textAnchor={anchor}
+                                >
+                                    {summaryLabel}
+                                </tspan>
+                            </text>
+                        )
+                    );
+                }}
                 tickValues={[summaryData[0], summaryData[2], summaryData[4]]}
                 strokeWidth={domainLineWidth}
                 tickLabelProps={() => tickLabelProps}

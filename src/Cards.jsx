@@ -26,6 +26,7 @@ import SummaryChart from './SummaryChart';
 import Text from './Text';
 import TinyBars from './TinyBars';
 import Tooltip from './Tooltip';
+import { siTwoFormatter } from './utils';
 
 const maxNumberHouses = max(data, (d) => d.houses_built);
 const maxNumberSchools = max(data, (d) => d.schools);
@@ -195,7 +196,7 @@ function Cards() {
                                 <Image
                                     src={districtMinimap[district]}
                                     alt={`${province} map silhouette with ${district} district highlighted.`}
-                                    css={{ width: chartWidth / 2, height: chartWidth / 2 }}
+                                    css={{ width: chartWidth / 1.5, height: chartWidth / 1.5 }}
                                 />
 
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
@@ -223,6 +224,20 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
+                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                    {siTwoFormatter(summaryData.bricks[1])}{' '}
+                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                        (1<sup>st</sup> Qu.)
+                                    </Text>
+                                    , {siTwoFormatter(summaryData.bricks[2])}{' '}
+                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                        (Median)
+                                    </Text>
+                                    , {siTwoFormatter(summaryData.bricks[3])}{' '}
+                                    <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                        (3<sup>rd</sup> Qu.)
+                                    </Text>
+                                </Text>
 
                                 <Heading as="h3">
                                     Tons of <Abbr title="Carbon dioxide">CO₂</Abbr> saved
@@ -233,6 +248,11 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
+                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                    {siTwoFormatter(summaryData.carbon[1])},{' '}
+                                    {siTwoFormatter(summaryData.carbon[2])},{' '}
+                                    {siTwoFormatter(summaryData.carbon[3])}
+                                </Text>
 
                                 <Heading as="h3">Total jobs</Heading>
                                 <SummaryChart
@@ -241,6 +261,11 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
+                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                    {siTwoFormatter(summaryData.jobs[1])},{' '}
+                                    {siTwoFormatter(summaryData.jobs[2])},{' '}
+                                    {siTwoFormatter(summaryData.jobs[3])}
+                                </Text>
                             </Box>
                         </Flex>
                     </Card>

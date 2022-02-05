@@ -15,7 +15,7 @@ function TinyBars({ value, maxValue, barWidth }) {
 
     return (
         <Tooltip content={`${value} vs. ${maxValue} (maximum value)`}>
-            <svg width={barWidth + halfBarWidth} height={chartHeight}>
+            <svg width={barWidth + halfBarWidth} height={chartHeight} cursor="help">
                 <rect
                     width={barWidth}
                     y={yScale(maxValue)}
