@@ -17,6 +17,7 @@ wasabi = "*"
 colour-science = "*"
 usort = "*"
 pycairo = "*"
+pyperclip = "*"
 
 [dev-packages]
 

@@ -20,15 +20,17 @@ function TinyBars({ value, maxValue, barWidth }) {
                     width={barWidth}
                     y={yScale(maxValue)}
                     height={chartHeight - yScale(maxValue)}
-                    fill={theme.colors.red6.value}
+                    fill={value ? theme.colors.red6.value : theme.colors.mauve6.value}
                 ></rect>
-                <rect
-                    x={halfBarWidth}
-                    width={barWidth}
-                    y={yScale(value)}
-                    height={chartHeight - yScale(value)}
-                    fill={theme.colors.red11.value}
-                ></rect>
+                {value && (
+                    <rect
+                        x={halfBarWidth}
+                        width={barWidth}
+                        y={yScale(value)}
+                        height={chartHeight - yScale(value)}
+                        fill={theme.colors.red11.value}
+                    ></rect>
+                )}
             </svg>
         </Tooltip>
     );
@@ -36,7 +38,7 @@ function TinyBars({ value, maxValue, barWidth }) {
 
 TinyBars.propTypes = {
     maxValue: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+    value: PropTypes.number,
     barWidth: PropTypes.number.isRequired
 };
 

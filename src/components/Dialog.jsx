@@ -5,6 +5,7 @@
 // - https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1715
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Cross1Icon } from '@radix-ui/react-icons';
+import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
 import { styled } from '../../stitches.config';
@@ -61,6 +62,10 @@ export const DialogContent = forwardRef(function DialogContent({ children, ...pr
         </DialogPrimitive.Portal>
     );
 });
+
+DialogContent.propTypes = {
+    children: PropTypes.node.isRequired
+};
 
 // https://github.com/radix-ui/primitives/issues/1086
 export const Dialog = DialogPrimitive.Root;

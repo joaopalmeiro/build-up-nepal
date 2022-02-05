@@ -7,7 +7,7 @@ const NUMBER_PROJECTS = data.length;
 const TWITTER_SHARE_BASE_URL = 'https://twitter.com/share';
 const TWITTER_SHARE_TEXT_QUERY = 'text=';
 // const TWITTER_SHARE_HASHTAGS_QUERY = 'hashtags=';
-const WEBSITE_URL = 'https://tools-dvs-soti-2021.vercel.app/'; // TODO
+const WEBSITE_URL = '';
 
 // https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal
 const TWITTER_SHARE_HASHTAGS = 'vizforsocialgood';

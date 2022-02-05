@@ -18,6 +18,8 @@ import data from './data.json';
 import Flex from './Flex';
 import Grid from './Grid';
 import Heading from './Heading';
+import Image from './Image';
+import { districtMinimap } from './minimaps';
 import Paragraph from './Paragraph';
 import summaryData from './summary.json';
 import SummaryChart from './SummaryChart';
@@ -55,7 +57,7 @@ function Cards() {
     const gapSize = parseFloat(theme.space[3].value);
     const gridGapSize = parseFloat(theme.space[1].value);
     const extraLeftPaddingSize = leftDateSize + gapSize;
-    const halfWidth = width / 2;
+    const halfWidth = width ? width / 2 : 0;
     const chartWidth = width ? halfWidth - gridGapSize - paddingSize - extraLeftPaddingSize : 0;
     // console.log(width, paddingSize, chartWidth);
 
@@ -70,7 +72,6 @@ function Cards() {
             ref={target}
         >
             {dataIndices.map((idx, i) => {
-                // TODO
                 // console.log(data[idx]);
 
                 const projectName = data[idx].name;
@@ -88,7 +89,7 @@ function Cards() {
                 const numberHouses = data[idx].houses_built;
                 const numberSchools = data[idx].schools;
 
-                const numberBricks = data[idx].bricks_produced;
+                const numberBricks = data[idx].bricks_produced ?? 0;
                 const numberCarbon = data[idx].co2_saved;
                 const numberJobs = data[idx].total_jobs;
 
@@ -169,39 +170,47 @@ function Cards() {
                                         >
                                             {projectDescription
                                                 ? projectDescription
-                                                : 'No further description available.'}
+                                                : 'No further description available for this enterprise/project.'}
                                         </Paragraph>
                                     </DialogContent>
                                 </Dialog>
 
                                 <Heading as="h3">Location</Heading>
-                                <Text>
-                                    {district} (
-                                    {province === 'Province No. 2' ? (
-                                        <Abbr title="Former Province No. 2">Madhesh Province</Abbr>
-                                    ) : (
-                                        province
-                                    )}
-                                    )
+                                {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L511 */}
+                                <Text as="p">
+                                    {district}{' '}
+                                    <Text variant="gray" css={{ display: 'unset' }}>
+                                        (
+                                        {province === 'Province No. 2' ? (
+                                            <Abbr title="Former Province No. 2">
+                                                Madhesh Province
+                                            </Abbr>
+                                        ) : (
+                                            province
+                                        )}
+                                        )
+                                    </Text>
                                 </Text>
 
+                                <Image
+                                    src={districtMinimap[district]}
+                                    alt={`${province} map silhouette with ${district} district highlighted.`}
+                                    css={{ width: chartWidth / 2, height: chartWidth / 2 }}
+                                />
+
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
-                                {numberHouses && (
-                                    <TinyBars
-                                        value={numberHouses}
-                                        maxValue={maxNumberHouses}
-                                        barWidth={parseFloat(theme.sizes[4].value)}
-                                    />
-                                )}
+                                <TinyBars
+                                    value={numberHouses}
+                                    maxValue={maxNumberHouses}
+                                    barWidth={parseFloat(theme.sizes[4].value)}
+                                />
 
                                 <Text css={{ lineHeight: '23px' }}>{numberSchools ?? '-'}</Text>
-                                {numberSchools && (
-                                    <TinyBars
-                                        value={numberSchools}
-                                        maxValue={maxNumberSchools}
-                                        barWidth={parseFloat(theme.sizes[6].value)}
-                                    />
-                                )}
+                                <TinyBars
+                                    value={numberSchools}
+                                    maxValue={maxNumberSchools}
+                                    barWidth={parseFloat(theme.sizes[6].value)}
+                                />
 
                                 <Tooltip content="Five-number summary with the value for this project highlighted">
                                     <Heading as="h3" css={{ cursor: 'help' }}>
