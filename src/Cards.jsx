@@ -116,66 +116,72 @@ function Cards() {
                             </Text>
 
                             <Flex direction="column">
-                                <Heading as="h2" size="1" css={{ mb: '$2' }}>
+                                <Heading
+                                    as="h2"
+                                    size="1"
+                                    // css={{ mb: '$2' }}
+                                >
                                     {projectName}
                                 </Heading>
 
-                                {/* https://design-system.modulz-deploys.com/#badge */}
-                                {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1017 */}
-                                <Badge
-                                    size="2"
-                                    // size="1"
-                                    variant="gold"
-                                >
-                                    {runningStates.includes(projectStatus) && (
-                                        <Box css={{ mr: '$1' }}>
-                                            <Status
-                                                size="1"
-                                                variant="gold"
-                                                css={{
-                                                    borderRadius: strugglingStates.includes(
-                                                        projectStatus
-                                                    )
-                                                        ? 'unset'
-                                                        : '$round'
-                                                }}
-                                            />
-                                        </Box>
-                                    )}
-                                    {projectStatus}
-                                </Badge>
-
-                                <Dialog
-                                // open
-                                >
-                                    <DialogTrigger asChild>
-                                        <IconButton>
-                                            <InfoCircledIcon />
-                                        </IconButton>
-                                    </DialogTrigger>
-                                    {/* https://www.radix-ui.com/docs/primitives/components/dialog#title */}
-                                    <DialogContent
-                                        aria-label={`Description of the enterprise/project ${projectName}`}
+                                <Flex justify="between" align="center">
+                                    {/* https://design-system.modulz-deploys.com/#badge */}
+                                    {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1017 */}
+                                    <Badge
+                                        size="2"
+                                        // size="1"
+                                        variant="gold"
                                     >
-                                        <Heading as="h2" size="1" css={{ mb: '$3' }}>
-                                            {projectName}
-                                        </Heading>
-                                        <Badge
-                                            size="2"
-                                            // variant="gray"
-                                            variant="gold"
+                                        {runningStates.includes(projectStatus) && (
+                                            <Box css={{ mr: '$1' }}>
+                                                <Status
+                                                    size="1"
+                                                    variant="gold"
+                                                    css={{
+                                                        borderRadius: strugglingStates.includes(
+                                                            projectStatus
+                                                        )
+                                                            ? 'unset'
+                                                            : '$round'
+                                                    }}
+                                                />
+                                            </Box>
+                                        )}
+                                        {projectStatus}
+                                    </Badge>
+
+                                    <Dialog
+                                    // open
+                                    >
+                                        <DialogTrigger asChild>
+                                            <IconButton>
+                                                <InfoCircledIcon />
+                                            </IconButton>
+                                        </DialogTrigger>
+                                        {/* https://www.radix-ui.com/docs/primitives/components/dialog#title */}
+                                        <DialogContent
+                                            aria-label={`Description of the enterprise/project ${projectName}`}
                                         >
-                                            {projectType}
-                                        </Badge>
-                                        <Paragraph
-                                            variant={projectDescription ? 'contrast' : 'gray'}
-                                        >
-                                            {projectDescription
-                                                ? projectDescription
-                                                : 'No further description available for this enterprise/project.'}
-                                        </Paragraph>
-                                    </DialogContent>
-                                </Dialog>
+                                            <Heading as="h2" size="1" css={{ mb: '$3' }}>
+                                                {projectName}
+                                            </Heading>
+                                            <Badge
+                                                size="2"
+                                                // variant="gray"
+                                                variant="gold"
+                                            >
+                                                {projectType}
+                                            </Badge>
+                                            <Paragraph
+                                                variant={projectDescription ? 'contrast' : 'gray'}
+                                            >
+                                                {projectDescription
+                                                    ? projectDescription
+                                                    : 'No further description available for this enterprise/project.'}
+                                            </Paragraph>
+                                        </DialogContent>
+                                    </Dialog>
+                                </Flex>
 
                                 <Heading as="h3">Location</Heading>
                                 {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L511 */}
@@ -197,7 +203,11 @@ function Cards() {
                                 <Image
                                     src={districtMinimap[district]}
                                     alt={`${province} map silhouette with ${district} district highlighted.`}
-                                    css={{ width: chartWidth / 1.5, height: chartWidth / 1.5 }}
+                                    css={{
+                                        width: chartWidth / 1.5,
+                                        height: chartWidth / 1.5,
+                                        alignSelf: 'center'
+                                    }}
                                 />
 
                                 <Text css={{ lineHeight: '23px' }}>{numberHouses ?? '-'}</Text>
