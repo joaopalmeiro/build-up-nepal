@@ -114,7 +114,8 @@ function Cards() {
                             >
                                 {projectStartDate}
                             </Text>
-                            <Box>
+
+                            <Flex direction="column">
                                 <Heading as="h2" size="1" css={{ mb: '$2' }}>
                                     {projectName}
                                 </Heading>
@@ -227,7 +228,7 @@ function Cards() {
                                 <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
                                     {siTwoFormatter(summaryData.bricks[1])}{' '}
                                     <Text size="2" variant="gray" css={{ display: 'unset' }}>
-                                        (1<sup>st</sup> Qu.)
+                                        (1st Qu.)
                                     </Text>
                                     , {siTwoFormatter(summaryData.bricks[2])}{' '}
                                     <Text size="2" variant="gray" css={{ display: 'unset' }}>
@@ -235,7 +236,7 @@ function Cards() {
                                     </Text>
                                     , {siTwoFormatter(summaryData.bricks[3])}{' '}
                                     <Text size="2" variant="gray" css={{ display: 'unset' }}>
-                                        (3<sup>rd</sup> Qu.)
+                                        (3rd Qu.)
                                     </Text>
                                 </Text>
 
@@ -266,7 +267,7 @@ function Cards() {
                                     {siTwoFormatter(summaryData.jobs[2])},{' '}
                                     {siTwoFormatter(summaryData.jobs[3])}
                                 </Text>
-                            </Box>
+                            </Flex>
                         </Flex>
                     </Card>
                 );
