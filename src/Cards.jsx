@@ -207,8 +207,10 @@ function Cards() {
                                         src={districtMinimap[district]}
                                         alt={`${province} map silhouette with ${district} district highlighted.`}
                                         css={{
-                                            width: chartWidth / 1.5,
-                                            height: chartWidth / 1.5,
+                                            width: chartWidth / 2,
+                                            // width: chartWidth / 1.5,
+                                            height: chartWidth / 2,
+                                            // height: chartWidth / 1.5,
                                             alignSelf: 'center',
                                             transform: `translate(-${extraLeftPaddingSize / 2}px)`
                                         }}
@@ -301,10 +303,32 @@ function Cards() {
                                         width={chartWidth}
                                         padding={extraLeftPaddingSize / 2}
                                     />
-                                    <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
+                                    {/* <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
                                         {siTwoFormatter(summaryData.carbon[1])},{' '}
                                         {siTwoFormatter(summaryData.carbon[2])},{' '}
                                         {siTwoFormatter(summaryData.carbon[3])}
+                                    </Text> */}
+                                    <Text
+                                        size="2"
+                                        as="p"
+                                        css={{
+                                            ta: 'right',
+
+                                            lineHeight: 1
+                                        }}
+                                    >
+                                        {siTwoFormatter(summaryData.carbon[1])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (1st Qu.)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.carbon[2])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (Median)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.carbon[3])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (3rd Qu.)
+                                        </Text>
                                     </Text>
                                 </Flex>
 
@@ -316,10 +340,32 @@ function Cards() {
                                         width={chartWidth}
                                         padding={extraLeftPaddingSize / 2}
                                     />
-                                    <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
+                                    {/* <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1 }}>
                                         {siTwoFormatter(summaryData.jobs[1])},{' '}
                                         {siTwoFormatter(summaryData.jobs[2])},{' '}
                                         {siTwoFormatter(summaryData.jobs[3])}
+                                    </Text> */}
+                                    <Text
+                                        size="2"
+                                        as="p"
+                                        css={{
+                                            ta: 'right',
+
+                                            lineHeight: 1
+                                        }}
+                                    >
+                                        {siTwoFormatter(summaryData.jobs[1])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (1st Qu.)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.jobs[2])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (Median)
+                                        </Text>
+                                        , {siTwoFormatter(summaryData.jobs[3])}{' '}
+                                        <Text size="2" variant="gray" css={{ display: 'unset' }}>
+                                            (3rd Qu.)
+                                        </Text>
                                     </Text>
                                 </Flex>
                             </Flex>
