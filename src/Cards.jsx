@@ -116,7 +116,11 @@ function Cards() {
                             </Text>
 
                             <Flex direction="column" gap="3">
-                                <Heading as="h2" size="1" css={{ mb: '$1' }}>
+                                <Heading
+                                    as="h2"
+                                    size="1"
+                                    // css={{ mb: '$1' }}
+                                >
                                     {projectName}
                                 </Heading>
 

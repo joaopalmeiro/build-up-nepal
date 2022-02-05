@@ -16,6 +16,13 @@ function Header() {
                 <Link href="https://www.buildupnepal.com/" target="_blank" rel="noreferrer">
                     Build up Nepal
                 </Link>
+                <Link
+                    href="https://www.vizforsocialgood.com/join-a-project/2021/12/28/build-up-nepal"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Here
+                </Link>
             </Paragraph>
             <Paragraph css={{ alignSelf: 'start' }}>
                 The start of these projects and enterprises goes from 2015 to April 2021 — thus,
@@ -26,6 +33,7 @@ function Header() {
                 Since there are a few projects with missing coordinates, don{"'"}t be surprised if
                 you add a new project and it doesn{"'"}t appear on the map below.
             </Paragraph>
+            <Paragraph css={{ alignSelf: 'start' }}>Let{"'"}s start!</Paragraph>
         </>
     );
 }

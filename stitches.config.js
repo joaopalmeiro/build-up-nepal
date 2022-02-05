@@ -114,6 +114,13 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
             mr: (value) => ({
                 marginRight: value
             }),
+            my: (value) => ({
+                marginTop: value,
+                marginBottom: value
+            }),
+            mt: (value) => ({
+                marginTop: value
+            }),
 
             p: (value) => ({
                 padding: value

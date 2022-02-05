@@ -20,7 +20,7 @@ function Counter() {
     // console.log(carbon, houses);
 
     return (
-        <Flex direction="column" align="center" gap="1">
+        <Flex direction="column" align="center" gap="1" css={{ my: '$5' }}>
             <Paragraph variant="gray">{intro}</Paragraph>
             <Flex gap="1">
                 <Alert>

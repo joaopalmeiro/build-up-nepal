@@ -17,9 +17,16 @@ const getHoverColor = (color) => ({
     }
 });
 
+import { styled } from '../stitches.config';
+
+// Source: https://github.com/radix-ui/design-system/blob/v0.6.2/components/Box.tsx
+const Foot = styled('footer', {
+    py: '$5'
+});
+
 function Footer() {
     return (
-        <footer>
+        <Foot>
             {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L421 */}
             {/* https://github.com/radix-ui/design-system/blob/v0.6.2/pages/index.tsx#L1505 */}
             <Paragraph css={{ ta: 'center' }}>
@@ -59,7 +66,7 @@ function Footer() {
                     Any feedback?
                 </Link>
             </Paragraph>
-        </footer>
+        </Foot>
     );
 }
 

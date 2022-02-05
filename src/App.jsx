@@ -134,7 +134,7 @@ function App() {
                         ghost
                         // as={disableTwitterShareButton ? 'button' : 'a'}
                         as="a"
-                        css={{ cursor: 'pointer' }}
+                        css={{ cursor: 'pointer', mb: '$2' }}
                         href={generateTwitterShareUrl(numberHouses, numberCarbon)}
                         target="_blank"
                         rel="noreferrer"
@@ -150,8 +150,10 @@ function App() {
                         Share
                     </Button>
                 </Flex>
+
                 <Cards />
-                <Container size="1">
+
+                <Container size="1" css={{ mt: '$9' }}>
                     <Flex direction="row" align="center" justify="center" gap="5">
                         {/* https://stitches.dev/docs/overriding-styles */}
                         <Box css={{ flexShrink: 1.25 }}>

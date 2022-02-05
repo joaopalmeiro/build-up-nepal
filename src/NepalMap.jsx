@@ -51,7 +51,12 @@ function NepalMap() {
         // https://www.buildupnepal.com/project-map/
         // https://www.react-simple-maps.io/docs/composable-map/
         // https://github.com/zcreativelabs/react-simple-maps/blob/v2.2.0/src/components/MapProvider.js#L27
-        <ComposableMap projection={projection} width={defaultWidth} height={mapHeight}>
+        <ComposableMap
+            projection={projection}
+            width={defaultWidth}
+            height={mapHeight}
+            style={{ marginTop: theme.space[5].value }}
+        >
             <Geographies geography={mapData}>
                 {({ geographies }) =>
                     geographies.map((geo) => (
