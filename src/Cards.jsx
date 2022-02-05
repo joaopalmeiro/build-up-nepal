@@ -224,7 +224,7 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
-                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
                                     {siTwoFormatter(summaryData.bricks[1])}{' '}
                                     <Text size="2" variant="gray" css={{ display: 'unset' }}>
                                         (1<sup>st</sup> Qu.)
@@ -248,7 +248,7 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
-                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
                                     {siTwoFormatter(summaryData.carbon[1])},{' '}
                                     {siTwoFormatter(summaryData.carbon[2])},{' '}
                                     {siTwoFormatter(summaryData.carbon[3])}
@@ -261,7 +261,7 @@ function Cards() {
                                     width={chartWidth}
                                     padding={extraLeftPaddingSize / 2}
                                 />
-                                <Text size="2" as="p" css={{ ta: 'right' }}>
+                                <Text size="2" as="p" css={{ ta: 'right', lineHeight: 1.5 }}>
                                     {siTwoFormatter(summaryData.jobs[1])},{' '}
                                     {siTwoFormatter(summaryData.jobs[2])},{' '}
                                     {siTwoFormatter(summaryData.jobs[3])}
