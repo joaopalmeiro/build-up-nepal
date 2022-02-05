@@ -122,6 +122,10 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
                 paddingLeft: value,
                 paddingRight: value
             }),
+            py: (value) => ({
+                paddingTop: value,
+                paddingBottom: value
+            }),
 
             ta: (value) => ({
                 textAlign: value

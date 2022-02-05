@@ -9,7 +9,9 @@ import Paragraph from './Paragraph';
 function Header() {
     return (
         <>
-            <Heading size="4">build it up, Nepal!</Heading>
+            <Heading size="4" css={{ py: '$9' }}>
+                build it up, Nepal!
+            </Heading>
             <Paragraph css={{ alignSelf: 'start' }}>
                 <Link href="https://www.buildupnepal.com/" target="_blank" rel="noreferrer">
                     Build up Nepal
